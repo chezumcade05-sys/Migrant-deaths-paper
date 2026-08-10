@@ -1,0 +1,571 @@
+<title>Sharing and running this project</title>
+<style>
+  :root {
+    --bg: #eff2f0;
+    --surface: #ffffff;
+    --surface-2: #e5eae7;
+    --text-primary: #182422;
+    --text-secondary: #52625d;
+    --text-muted: #7c8a85;
+    --border: #d5ddd9;
+    --accent: #0b6e76;
+    --accent-strong: #054850;
+    --accent-soft: #dbeeee;
+    --clay: #8a6650;
+    --clay-soft: #f0e6dc;
+    --code-bg: #16211f;
+    --code-text: #dfe8e4;
+    --code-muted: #7fa39e;
+    --font-heading: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121c1a;
+      --surface: #182422;
+      --surface-2: #1f2e2b;
+      --text-primary: #e9efec;
+      --text-secondary: #a9b8b3;
+      --text-muted: #7c8f89;
+      --border: #2c3a37;
+      --accent: #4fd0cf;
+      --accent-strong: #8fe4e2;
+      --accent-soft: #1d3937;
+      --clay: #d3ab88;
+      --clay-soft: #34291f;
+      --code-bg: #0c1413;
+      --code-text: #d9e5e1;
+      --code-muted: #6fa39d;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121c1a;
+    --surface: #182422;
+    --surface-2: #1f2e2b;
+    --text-primary: #e9efec;
+    --text-secondary: #a9b8b3;
+    --text-muted: #7c8f89;
+    --border: #2c3a37;
+    --accent: #4fd0cf;
+    --accent-strong: #8fe4e2;
+    --accent-soft: #1d3937;
+    --clay: #d3ab88;
+    --clay-soft: #34291f;
+    --code-bg: #0c1413;
+    --code-text: #d9e5e1;
+    --code-muted: #6fa39d;
+  }
+  :root[data-theme="light"] {
+    --bg: #eff2f0;
+    --surface: #ffffff;
+    --surface-2: #e5eae7;
+    --text-primary: #182422;
+    --text-secondary: #52625d;
+    --text-muted: #7c8a85;
+    --border: #d5ddd9;
+    --accent: #0b6e76;
+    --accent-strong: #054850;
+    --accent-soft: #dbeeee;
+    --clay: #8a6650;
+    --clay-soft: #f0e6dc;
+    --code-bg: #16211f;
+    --code-text: #dfe8e4;
+    --code-muted: #7fa39e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 5rem;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.9rem;
+  }
+  h1 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.15;
+    text-wrap: balance;
+    margin: 0 0 0.9rem;
+    color: var(--text-primary);
+  }
+  .lede {
+    font-size: 1.08rem;
+    color: var(--text-secondary);
+    max-width: 56ch;
+    margin: 0 0 2.4rem;
+  }
+  .lede strong { color: var(--text-primary); font-weight: 600; }
+  .contents {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 3rem;
+  }
+  .contents-title {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 0.6rem;
+  }
+  .contents ol {
+    margin: 0;
+    padding-left: 1.15rem;
+    columns: 2;
+    column-gap: 1.5rem;
+  }
+  .contents li { margin-bottom: 0.35rem; break-inside: avoid; }
+  .contents a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  .contents a:hover { color: var(--accent); }
+
+  section { margin-bottom: 3.2rem; scroll-margin-top: 1.5rem; }
+  .step-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+    margin-bottom: 0.7rem;
+  }
+  .step-num {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    color: var(--accent);
+    border: 1px solid var(--border);
+    background: var(--accent-soft);
+    width: 2.1rem;
+    height: 2.1rem;
+    min-width: 2.1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  h2 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .step-body { padding-left: 3rem; }
+  .step-body > p { color: var(--text-secondary); margin: 0 0 1rem; max-width: 60ch; }
+  .step-body > p:last-child { margin-bottom: 0; }
+  h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin: 1.4rem 0 0.6rem;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.1rem 1.3rem;
+    margin: 1rem 0;
+  }
+
+  .path-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 0.8rem;
+  }
+  .path-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.1rem 1.2rem;
+  }
+  .path-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 0 0 0.4rem;
+    color: var(--text-primary);
+  }
+  .path-card p { font-size: 0.92rem; color: var(--text-secondary); margin: 0; }
+
+  pre {
+    background: var(--code-bg);
+    color: var(--code-text);
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 0.86rem;
+    line-height: 1.55;
+    margin: 0.7rem 0;
+    position: relative;
+  }
+  pre .comment { color: var(--code-muted); }
+  .code-wrap { position: relative; }
+  .copy-btn {
+    position: absolute;
+    top: 0.55rem;
+    right: 0.55rem;
+    font-family: var(--font-body);
+    font-size: 11.5px;
+    color: var(--code-muted);
+    background: transparent;
+    border: 1px solid #2c3a37;
+    border-radius: 5px;
+    padding: 0.25rem 0.55rem;
+    cursor: pointer;
+  }
+  .copy-btn:hover { color: var(--code-text); border-color: var(--code-muted); }
+  .copy-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  .callout {
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+    border: 1px solid transparent;
+  }
+  .callout.tip { background: var(--accent-soft); border-color: var(--accent); color: var(--text-primary); }
+  .callout.tip strong { color: var(--accent-strong); }
+  .callout.note { background: var(--clay-soft); border-color: var(--clay); color: var(--text-primary); }
+  .callout.note strong { color: var(--clay); }
+
+  code.inline {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    background: var(--surface-2);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin: 0.8rem 0;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.55rem 0.7rem;
+    border-bottom: 1px solid var(--border);
+  }
+  th { color: var(--text-muted); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.03em; text-transform: uppercase; }
+  td { color: var(--text-secondary); }
+  td:first-child, th:first-child { color: var(--text-primary); }
+  td code.inline, th code.inline { font-size: 0.82em; }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 3rem 0;
+  }
+
+  footer {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    max-width: 60ch;
+  }
+  footer a { color: var(--accent); }
+
+  ul.plain { padding-left: 1.2rem; color: var(--text-secondary); }
+  ul.plain li { margin-bottom: 0.4rem; }
+  ul.plain li::marker { color: var(--accent); }
+
+  @media (max-width: 560px) {
+    .contents ol { columns: 1; }
+    .step-body { padding-left: 0; margin-top: 0.9rem; }
+    h1 { font-size: 1.9rem; }
+  }
+</style>
+
+<div class="page">
+  <p class="eyebrow">Migrant deaths &amp; danger index project — plain-language guide</p>
+  <h1>Sharing and running this project</h1>
+  <p class="lede">
+    This walks through sending the project to someone else and getting it running on
+    their computer — <strong>no programming background assumed.</strong> If you already
+    know your way around a terminal, the README and COAUTHOR_CONTEXT files in the
+    project folder go deeper; this page is the short version for everyone else.
+  </p>
+
+  <nav class="contents">
+    <p class="contents-title">On this page</p>
+    <ol>
+      <li><a href="#whats-inside">What's in the package</a></li>
+      <li><a href="#sending-it">Sending it to someone</a></li>
+      <li><a href="#opening-it">Opening the package</a></li>
+      <li><a href="#pick-a-path">Python or R?</a></li>
+      <li><a href="#python-setup">Setting up Python</a></li>
+      <li><a href="#r-setup">Setting up R</a></li>
+      <li><a href="#first-run">Making your first figure</a></li>
+      <li><a href="#troubleshooting">If something goes wrong</a></li>
+      <li><a href="#learn-more">Where to go for more detail</a></li>
+    </ol>
+  </nav>
+
+  <section id="whats-inside">
+    <div class="step-head">
+      <span class="step-num">1</span>
+      <h2>What's in the package</h2>
+    </div>
+    <div class="step-body">
+      <p>
+        It's a single <code class="inline">.zip</code> file, about 22 MB. Inside is
+        everything needed to regenerate every map and chart in the project from
+        scratch — the underlying data, and two independent sets of scripts (one in
+        Python, one in R) that turn that data into figures.
+      </p>
+      <ul class="plain">
+        <li><strong>Scripts</strong> — the actual instructions that build each figure</li>
+        <li><strong>Data</strong> — death records, water station locations, road/desert maps, and a border fencing dataset</li>
+        <li><strong>Written guides</strong> — a technical README and methodology notes, for whenever more detail is needed</li>
+      </ul>
+      <div class="callout note">
+        <strong>One thing worth knowing:</strong> the border fencing dataset is
+        marked <em>For Official Use Only</em> by the government agency that
+        produced it. Ordinary sensitivity, not classified — but worth a moment's
+        thought before it goes somewhere public.
+      </div>
+    </div>
+  </section>
+
+  <section id="sending-it">
+    <div class="step-head">
+      <span class="step-num">2</span>
+      <h2>Sending it to someone</h2>
+    </div>
+    <div class="step-body">
+      <p>
+        At 22 MB, the zip file is small enough for most ordinary sharing methods —
+        no special tools needed.
+      </p>
+      <table>
+        <tr><th>Method</th><th>Works?</th></tr>
+        <tr><td>Email attachment</td><td>Yes, comfortably under every major provider's limit (typically 25 MB)</td></tr>
+        <tr><td>Google Drive / Dropbox / OneDrive</td><td>Yes — upload once, share a link</td></tr>
+        <tr><td>Messaging apps (Slack, iMessage, etc.)</td><td>Yes, though some compress or reject zip files — a cloud link is safer</td></tr>
+      </table>
+      <p>Whichever method: send the <code class="inline">.zip</code> file exactly as it is. No need to unzip it first.</p>
+    </div>
+  </section>
+
+  <section id="opening-it">
+    <div class="step-head">
+      <span class="step-num">3</span>
+      <h2>Opening the package</h2>
+    </div>
+    <div class="step-body">
+      <p>Once the recipient has the <code class="inline">.zip</code> file downloaded:</p>
+      <h3>On a Mac</h3>
+      <p>Double-click the file. It unpacks itself into a regular folder, right next to the zip.</p>
+      <h3>On Windows</h3>
+      <p>Right-click the file and choose <strong>Extract All</strong>, then pick a location.</p>
+      <div class="callout tip">
+        <strong>Tip:</strong> put the unpacked folder somewhere easy to find again —
+        the Desktop or Documents both work fine. Everything below assumes you can
+        get back to that folder.
+      </div>
+    </div>
+  </section>
+
+  <section id="pick-a-path">
+    <div class="step-head">
+      <span class="step-num">4</span>
+      <h2>Python or R?</h2>
+    </div>
+    <div class="step-body">
+      <p>
+        Every figure exists twice — once built in Python, once in R — and they produce
+        the same result. <strong>Only one is needed.</strong> Pick whichever fits:
+      </p>
+      <div class="path-grid">
+        <div class="path-card">
+          <h4>Choose Python if…</h4>
+          <p>you're comfortable typing commands into a Terminal window, or you just want the more common option.</p>
+        </div>
+        <div class="path-card">
+          <h4>Choose R if…</h4>
+          <p>you already have (or don't mind installing) RStudio — its setup involves one line, no separate command-line tool.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="python-setup">
+    <div class="step-head">
+      <span class="step-num">5a</span>
+      <h2>Setting up Python</h2>
+    </div>
+    <div class="step-body">
+      <p>Skip to <a href="#r-setup">Setting up R</a> if that's the path chosen instead.</p>
+      <h3>Step 1 — Open a Terminal</h3>
+      <p>
+        On a Mac: open <strong>Terminal</strong> (search for it with Spotlight —
+        <code class="inline">Cmd + Space</code>, then type "Terminal").
+        On Windows: open <strong>Command Prompt</strong> or
+        <strong>PowerShell</strong> from the Start menu.
+      </p>
+      <h3>Step 2 — Move into the unpacked folder</h3>
+      <p>Type <code class="inline">cd </code> (with a trailing space), drag the unpacked folder from Finder/Explorer straight into the Terminal window, then press Enter.</p>
+      <h3>Step 3 — Set up a private workspace for the required packages</h3>
+      <p>Paste each line below one at a time, pressing Enter after each:</p>
+      <div class="code-wrap">
+        <button class="copy-btn" type="button" aria-label="Copy setup commands">Copy</button>
+        <pre><span class="comment"># creates a self-contained workspace inside the folder</span>
+python3 -m venv .venv
+
+<span class="comment"># installs everything the scripts need into it</span>
+./.venv/bin/pip install -r requirements.txt</pre>
+      </div>
+      <p>The second command takes a minute or two — it's downloading several data/mapping libraries.</p>
+      <h3>Step 4 — Run a figure</h3>
+      <div class="code-wrap">
+        <button class="copy-btn" type="button" aria-label="Copy run command">Copy</button>
+        <pre>./.venv/bin/python figure4.py</pre>
+      </div>
+      <p>A line of text will print out, ending with <code class="inline">Saved plot to ...</code> — that's success.</p>
+    </div>
+  </section>
+
+  <section id="r-setup">
+    <div class="step-head">
+      <span class="step-num">5b</span>
+      <h2>Setting up R</h2>
+    </div>
+    <div class="step-body">
+      <p>Skip this if Python was chosen instead.</p>
+      <h3>Step 1 — Install R and RStudio, if not already installed</h3>
+      <p>
+        Both are free at
+        <a href="https://posit.co/download/rstudio-desktop/">posit.co/download/rstudio-desktop</a>
+        — install R first, then RStudio.
+      </p>
+      <h3>Step 2 — Open the folder in RStudio</h3>
+      <p>In RStudio: <strong>File → Open Folder</strong> (or open any of the <code class="inline">.R</code> files directly) and point it at the unpacked project folder.</p>
+      <h3>Step 3 — Install one package</h3>
+      <p>In RStudio's Console panel, type this and press Enter:</p>
+      <div class="code-wrap">
+        <button class="copy-btn" type="button" aria-label="Copy install command">Copy</button>
+        <pre>install.packages("sf")</pre>
+      </div>
+      <h3>Step 4 — Run a figure</h3>
+      <p>Open <code class="inline">figure4.R</code> in RStudio and click <strong>Source</strong> (top-right of the editor pane) — or, in the Console, type:</p>
+      <div class="code-wrap">
+        <button class="copy-btn" type="button" aria-label="Copy source command">Copy</button>
+        <pre>source("figure4.R")</pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="first-run">
+    <div class="step-head">
+      <span class="step-num">6</span>
+      <h2>Making your first figure</h2>
+    </div>
+    <div class="step-body">
+      <p>
+        <code class="inline">figure4</code> is the simplest one to try first — a map of
+        recorded deaths before 2008. Once it finishes, a new file called
+        <code class="inline">figure4_reproduction.png</code> (or
+        <code class="inline">_R.png</code>) appears in the same folder. Open it like any
+        image file.
+      </p>
+      <p>From there, every other figure works the same way — just swap the number:</p>
+      <table>
+        <tr><th>File</th><th>What it shows</th></tr>
+        <tr><td><code class="inline">figure2</code></td><td>The danger index map</td></tr>
+        <tr><td><code class="inline">figure3</code></td><td>All recorded deaths, 2000–2019</td></tr>
+        <tr><td><code class="inline">figure6</code> / <code class="inline">figure7</code></td><td>Hot-spot analysis, before and after the fencing law</td></tr>
+        <tr><td><code class="inline">figure8</code></td><td>Hot spots overlaid on the danger index</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="troubleshooting">
+    <div class="step-head">
+      <span class="step-num">7</span>
+      <h2>If something goes wrong</h2>
+    </div>
+    <div class="step-body">
+      <h3>"python3: command not found"</h3>
+      <p>Python isn't installed. Get it from <a href="https://www.python.org/downloads/">python.org/downloads</a>, then start again from Step 1.</p>
+      <h3>A wall of red text appears</h3>
+      <p>
+        Most of the time the last few lines explain what happened. The single most
+        common cause is a Python version mismatch — this project expects
+        <strong>Python 3.9 through 3.12</strong>. If a newer version is all that's
+        available, that's worth flagging to whoever put this package together.
+      </p>
+      <h3>The fence lines are missing from a map</h3>
+      <p>
+        Not an error — some figures show a note like <code class="inline">fence: OFF</code> in
+        the console if a particular mapping library didn't install. Everything else
+        still renders correctly.
+      </p>
+      <h3>Still stuck</h3>
+      <p>
+        Copy the exact error text and send it back to whoever shared this package —
+        it's almost always a quick fix once the error message is visible.
+      </p>
+    </div>
+  </section>
+
+  <section id="learn-more">
+    <div class="step-head">
+      <span class="step-num">8</span>
+      <h2>Where to go for more detail</h2>
+    </div>
+    <div class="step-body">
+      <p>Everything above is intentionally the short version. For more depth, these files live in the same folder:</p>
+      <table>
+        <tr><th>File</th><th>What's in it</th></tr>
+        <tr><td><code class="inline">README.md</code></td><td>The full technical pipeline, every script explained</td></tr>
+        <tr><td><code class="inline">COAUTHOR_CONTEXT.md</code></td><td>A faster-orientation note for a technical collaborator</td></tr>
+        <tr><td><code class="inline">DANGER_INDEX_METHODOLOGY.md</code></td><td>How the danger index is built and why</td></tr>
+        <tr><td><code class="inline">REFERENCES.md</code></td><td>Every outside data source used, with citations</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <hr class="divider" />
+  <footer>
+    <p>
+      This project reproduces figures from Bansak, Blanco, Coon &amp; Dieringer (2025),
+      <em>Border Walls and Death on the US–Mexico Border</em>. The underlying data
+      concerns real people who died attempting to cross the desert — handled and
+      shared with that in mind.
+    </p>
+  </footer>
+</div>
+
+<script>
+  document.querySelectorAll(".copy-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var pre = btn.parentElement.querySelector("pre");
+      var text = pre.innerText;
+      navigator.clipboard.writeText(text).then(function () {
+        var original = btn.textContent;
+        btn.textContent = "Copied";
+        setTimeout(function () { btn.textContent = original; }, 1500);
+      });
+    });
+  });
+</script>

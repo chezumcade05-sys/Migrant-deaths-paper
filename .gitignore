@@ -1,0 +1,46 @@
+# Python virtual environment -- not portable between machines, rebuild
+# locally with: python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt
+.venv/
+__pycache__/
+*.pyc
+
+# R session artifacts
+.Rhistory
+.RData
+.Rproj.user/
+
+# OS junk
+.DS_Store
+
+# Unused TIGER/Line layer (125MB, not referenced by any script -- see README.md)
+Shape Files/tl_2021_us_county/
+
+# Unpublished paper draft and reviewer-facing materials -- not part of the
+# code/data pipeline, and not for public distribution ahead of publication.
+Bansak_Blanco_Coon_Dieringer_Hot_Spots_2025_CEP.docx
+~$*.docx
+Hot Spot Analysis Methodology Notes.docx
+
+# The original paper's own precomputed ArcGIS hot-spot output, used only as
+# a one-time validation reference during development -- not this project's
+# own output, and not ours to redistribute.
+HotBeforejuly2023.*
+HotAfterJuly2023.*
+
+# Regression analysis -- excluded from this shared package by request.
+poisson_did_regression.py
+poisson_did_regression.R
+poisson_did_panel*.csv
+poisson_did_regression_results*.txt
+
+# IDE/tool config -- machine- and session-specific, not project content.
+.idea/
+.vscode/
+.claude/
+
+# Raw research spreadsheets never used by any script in this pipeline:
+# border-wide (not just AZ) fence/vehicle-barrier tables matching the FOUO
+# geodatabase's own schema, CBP staffing/apprehension figures by sector,
+# and what appears to be the paper's own core raw dataset. Not reviewed or
+# sourced by anything in this repo, and not this repo's call to publish.
+Excel/

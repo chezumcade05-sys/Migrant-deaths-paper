@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>Faunt, Claudia C.</origin>
+				<pubdate>2006</pubdate>
+				<title>Deserts of the southwestern United States, for the Death Valley regional ground-water flow system study, Nevada and California</title>
+				<geoform>map</geoform>
+				<serinfo>
+					<sername>Digital geospatial data sets for the hydrogeologic framework and transient ground-water flow model, Death Valley regional ground-water flow system, Nevada and California</sername>
+					<issue>deserts_sw</issue>
+				</serinfo>
+				<pubinfo>
+					<pubplace>Denver, Colorado</pubplace>
+					<publish>U.S. Geological Survey</publish>
+				</pubinfo>
+				<onlink>http://rockyitr.cr.usgs.gov/metadata/dvrfs/archive/deserts_sw.zip</onlink>
+				<lworkcit>
+					<citeinfo>
+						<origin>Belcher, W.R. (editor)</origin>
+						<pubdate>2004</pubdate>
+						<title>Death Valley regional ground-water flow system, Nevada and California - Hydrogeologic framework and transient ground-water flow model</title>
+						<serinfo>
+							<sername>U.S. Geological Survey Scientific Investigations Report</sername>
+							<issue>2004-5205</issue>
+						</serinfo>
+						<pubinfo>
+							<pubplace>Denver, Colorado</pubplace>
+							<publish>U.S. Geological Survey</publish>
+						</pubinfo>
+						<othercit>6 chapters, 2 appendices, 2 plates, 408 p.</othercit>
+						<onlink>http://pubs.usgs.gov/sir/2004/5205/</onlink>
+					</citeinfo>
+				</lworkcit>
+				<ftname Sync="TRUE">deserts_sw</ftname></citeinfo>
+		</citation>
+		<descript>
+			<abstract>This digital data set defines the boundaries of the deserts of the southwestern United States.  Those deserts include the Great Basin, Mojave, Colorado, and Sonoran Deserts as defined by Benson and Darrow (1981).  The study by Benson and Darrow (1981) was a historical reference used to support development of the transient ground-water model of Death Valley regional ground-water flow system (DVRFS) completed in 2004 by the USGS (see "Larger Work Citation", Chapter A, page 8, for details).</abstract>
+			<purpose>This digital data set presents the boundaries of the deserts of the southwestern United States defined by Benson and Darrow (1981).  This data set supported development of the conceptual model of the Death Valley regional ground-water flow system (see "Larger Work Citation", figure A-2, p. 10).</purpose>
+			<supplinf>The boundaries of the deserts of the southwestern United States data set is one of many layers in a geospatial database supporting the USGS DVRFS project. During this 5-year (1998-2004) project the USGS, in cooperation with DOE and other Federal, State, and local agencies, developed this geospatial database for a regional-scale, 3D hydrogeologic framework model (HFM) and a ground-water flow model. The models are intended to address water-resource issues and the potential movement of radioactive material from the Nevada Test Site and the proposed high-level nuclear waste repository at Yucca Mountain, Nevada.
+
+Data from two previous ground-water flow models of the greater Death Valley region (see "Larger Work Citation", Chapter A, p. 7) were the foundation of the DVRFS geospatial database. These and other data were reexamined through a series of regional-scale hydrologic investigations to provide updated and spatially consistent interpretations for the DVRFS study. In some cases, new data were collected to augment the existing information. Data compiled from the studies include natural ground-water discharge occurring through evapotranspiration and spring flow; ground-water pumping for the period 1913-98; ground-water recharge simulated as net infiltration; ground-water inflow and outflow at lateral model boundaries; hydraulic conductivity and its relation to depth and other rock properties; and the estimation of water levels representative of prepumped and pumped conditions in the region. Digital elevation models, geologic maps, borehole information, cross sections, and other 3D models were used to develop the HFM which represents the geometry of 27 hydrogeologic units and structural features. The resulting geospatial database supports characterization and conceptualization of the DVRFS, construction of 3D hydrogeologic framework and ground-water flow models, and visualization of analysis and model results.</supplinf>
+			<langdata Sync="TRUE">en</langdata></descript>
+		<timeperd>
+			<timeinfo>
+				<rngdates>
+					<begdate>1981</begdate></rngdates>
+			</timeinfo>
+			<current>publication date</current></timeperd>
+		<status>
+			<progress>Complete</progress><update>None planned</update></status>
+		<spdom>
+			<bounding>
+				<westbc Sync="TRUE">-119.961136</westbc><eastbc Sync="TRUE">-109.300061</eastbc><northbc Sync="TRUE">40.126799</northbc><southbc Sync="TRUE">31.426889</southbc></bounding>
+			<lboundng><leftbc Sync="TRUE">247540.515625</leftbc><rightbc Sync="TRUE">1158877.375000</rightbc><bottombc Sync="TRUE">3497551.750000</bottombc><topbc Sync="TRUE">4441620.500000</topbc></lboundng></spdom>
+		<keywords>
+			<theme>
+				<themekt>USGS Water Basics Glossary. Accessed May 3, 2005 at http://capp.water.usgs.gov/GIP/h2o_gloss/; American Geological Institute Glossary of Geology</themekt>
+				<themekey>Death Valley regional ground-water flow system</themekey><themekey>evapotranspiration</themekey><themekey>flow model</themekey><themekey>ground water</themekey><themekey>ground-water discharge</themekey><themekey>ground-water pumping</themekey><themekey>ground-water recharge</themekey><themekey>hydraulic conductivity</themekey><themekey>hydraulic head</themekey><themekey>hydrogeologic framework model</themekey><themekey>hydrogeology</themekey><themekey>hydrology</themekey><themekey>lateral ground-water model boundary</themekey><themekey>net infiltration</themekey><themekey>spring flow</themekey><themekey>steady state ground-water model</themekey><themekey>transient ground-water model</themekey><themekey>water well</themekey></theme>
+			<place>
+				<placekt>U.S. Board of Geographic Names (BGN) and Geographic Names Information System (GNIS)</placekt>
+				<placekey>Amargosa Desert</placekey><placekey>Ash Meadows</placekey><placekey>California Valley</placekey><placekey>Chicago Valley</placekey><placekey>China Ranch</placekey><placekey>Clark County</placekey><placekey>Clayton Valley</placekey><placekey>Coal Valley</placekey><placekey>Death Valley</placekey><placekey>eastern California</placekey><placekey>Esmeralda County</placekey><placekey>Eureka Valley</placekey><placekey>Franklin Lake</placekey><placekey>Garden Valley</placekey><placekey>Inyo County</placekey><placekey>Kern County</placekey><placekey>Las Vegas Valley</placekey><placekey>Lincoln County</placekey><placekey>Mesquite Valley</placekey><placekey>Mineral County</placekey><placekey>Mono County</placekey><placekey>Nevada</placekey><placekey>Nevada Test Site</placekey><placekey>Nye County</placekey><placekey>Oasis Valley</placekey><placekey>Owlshead Mountains</placekey><placekey>Pahranagat Range</placekey><placekey>Pahrump Valley</placekey><placekey>Panamint Range</placekey><placekey>Penoyer Valley</placekey><placekey>Railroad Valley</placekey><placekey>Resting Spring</placekey><placekey>Saline Valley</placekey><placekey>San Bernardino County</placekey><placekey>Sarcobatus Flat</placekey><placekey>Sheep Range</placekey><placekey>Shoshone</placekey><placekey>Silurian Valley</placekey><placekey>southern Nevada</placekey><placekey>Spring Mountains</placekey><placekey>Stewart Valley</placekey><placekey>Stone Cabin Valley</placekey><placekey>Tecopa</placekey><placekey>Yucca Mountain</placekey><placekey>Great Basin Desert</placekey><placekey>Mojave Desert</placekey><placekey>Colorado Sonoran Desert</placekey><placekey>Arizona Sonoran Desert</placekey><placekey>California</placekey><placekey>Franklin Well</placekey></place>
+		</keywords>
+		<accconst>None</accconst>
+		<useconst>Data have been checked to ensure the accuracy of the data. If any errors are detected, please notify the originating office. The U.S. Geological Survey strongly recommends that careful attention be paid to the metadata file associated with these data. The U.S. Geological Survey shall not be held liable for improper or incorrect use of the data described and (or) contained herein.
+
+Acknowledgement of the U.S. Geological Survey would be appreciated in products derived from these data.
+
+Any use of trade, product, or firm names is for descriptive purposes only and does not imply endorsement by the U.S. Government.  Although this Federal Geographic Data Committee-compliant metadata file is intended to document the data set in nonproprietary form, as well as in ArcGIS format, this metadata file may include some ArcGIS-specific terminology.</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>U.S. Geological Survey</cntorg>
+					<cntper>Claudia Faunt</cntper>
+				</cntorgp>
+				<cntpos>Hydrologist</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>California Water Science Center</address>
+					<city>San Diego</city>
+					<state>California</state>
+					<postal>92101</postal>
+					<country>USA</country>
+					<address>San Diego Projects Office</address><address>4165 Spruance Road</address></cntaddr>
+				<cntvoice>(619) 225-6142</cntvoice>
+				<cntfax>(619) 225-6101</cntfax>
+				<cntemail>ccfaunt@usgs.gov</cntemail>
+			</cntinfo>
+		</ptcontac>
+		<datacred>Spatial data sets supporting the Death Valley regional ground-water flow system (DVRFS) project were developed in cooperation with the U.S. Department of Energy (DOE) National Nuclear Security Administration/Nevada Site Office (NNSA/NSO) Underground Test Area (UGTA) project of the Office of Environmental Management, the NNSA/NSO Hydrologic Resource Management Program (HRMP), the Office of Civilian Radioactive Waste Management (OCRWM) Yucca Mountain Project (YMP), the NNSA/NSO Maintenance of Test Capability (MTC) program, and the National Park Service (NPS).</datacred>
+		<native Sync="TRUE">Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 2; ESRI ArcCatalog 9.1.0.722</native>
+		<natvform Sync="TRUE">Shapefile</natvform></idinfo>
+	<dataqual>
+		<attracc>
+			<attraccr>Attributes in this data set were checked by the data set author by inspection using queries, hardcopy printouts, and visually using a GIS. In addition, attributes were checked and evaluated as part of the review process associated with the publication of the source report (Larger Work Citation).</attraccr>
+		</attracc>
+		<posacc>
+			<horizpa>
+				<horizpar>Horizontal positional accuracy of line features in the data set was tested by visually comparing to digital source maps using a GIS.</horizpar></horizpa>
+			<vertacc>
+			</vertacc>
+		</posacc>
+		<lineage>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<title>Trees and shrubs of the southwestern deserts</title><origin>Benson, Lyman</origin><origin>Darrow, R.A.</origin><pubdate>1981</pubdate><geoform>map</geoform><pubinfo><pubplace>Tucson,  Arizona</pubplace><publish>University of Arizona Press</publish></pubinfo><othercit>416 p.</othercit></citeinfo>
+				</srccite>
+				<srctime>
+					<timeinfo>
+						<sngdate>
+							<caldate>1981</caldate></sngdate>
+					</timeinfo>
+					<srccurr>publication date</srccurr></srctime>
+				<typesrc>paper</typesrc><srccitea>Benson and Darrow (1981)</srccitea><srccontr>Report from which boundaries were digitized.</srccontr></srcinfo>
+			<procstep>
+				<procdesc>The polygon features representing the deserts of the southwestern United States by Benson and Darrow (1981) were manually traced from a paper-based figure onto a stable base mylar. A drumbed scanner was then used to capture the digital data at a resolution of approximately 0.01 inches. A minimum of four control points corresponding to the latitude and longitude even degree locations on the plate were used to register the data to Universal Transverse Mercator (UTM) during digitization. The digital data set was checked by comparing plots to the source material and the coverage was attributed.</procdesc><procsv>ArcInfo 7.x</procsv><srcused>Benson and Darrow (1981)</srcused><procdate>1993</procdate></procstep>
+		</lineage>
+		<logic>Lines forming the polygon join at endpoints to completely enclose the area. Lines do not intersect, and no duplicate line features exist. All endpoints are represented by a single coordinate pair which indicates the beginning or end of a line.</logic><complete>Line features in this data set were digitized from hard copy in Benson and Darrow (1981). The data set is complete and is not anticipated to change.</complete></dataqual>
+	<spdoinfo>
+		<ptvctinf>
+			<sdtsterm Name="deserts_sw">
+				<sdtstype Sync="TRUE">G-polygon</sdtstype><ptvctcnt Sync="TRUE">4</ptvctcnt></sdtsterm>
+			<esriterm Name="deserts_sw"><efeatyp Sync="TRUE">Simple</efeatyp><efeageom Sync="TRUE">Polygon</efeageom><esritopo Sync="TRUE">FALSE</esritopo><efeacnt Sync="TRUE">4</efeacnt><spindex Sync="TRUE">TRUE</spindex><linrefer Sync="TRUE">FALSE</linrefer></esriterm></ptvctinf>
+		<direct Sync="TRUE">Vector</direct></spdoinfo>
+	<spref>
+		<horizsys>
+			<geodetic>
+				<horizdn Sync="TRUE">North American Datum of 1927</horizdn><ellips Sync="TRUE">Clarke 1866</ellips><semiaxis Sync="TRUE">6378206.400000</semiaxis><denflat Sync="TRUE">294.978698</denflat></geodetic>
+			<cordsysn><geogcsn Sync="TRUE">GCS_North_American_1927</geogcsn><projcsn Sync="TRUE">NAD_1927_UTM_Zone_11N</projcsn></cordsysn><planar><planci><plance Sync="TRUE">coordinate pair</plance><plandu Sync="TRUE">meters</plandu><coordrep><absres Sync="TRUE">0.002048</absres><ordres Sync="TRUE">0.002048</ordres></coordrep></planci><gridsys><gridsysn Sync="TRUE">Universal Transverse Mercator</gridsysn><utm><utmzone Sync="TRUE">11</utmzone><transmer><sfctrmer Sync="TRUE">0.999600</sfctrmer><longcm Sync="TRUE">-117.000000</longcm><latprjo Sync="TRUE">0.000000</latprjo><feast Sync="TRUE">500000.000000</feast><fnorth Sync="TRUE">0.000000</fnorth></transmer></utm></gridsys></planar></horizsys>
+	</spref>
+	<eainfo>
+		<detailed Name="deserts_sw">
+			<enttyp>
+				<enttypt Sync="TRUE">Feature Class</enttypt><enttypc Sync="TRUE">4</enttypc><enttypl>Boundary of desert region</enttypl><enttypd>Area characterized by a distinct ecotype.</enttypd><enttypds>Author (Metadata Contact Person)</enttypds></enttyp>
+			<attr><attrlabl Sync="TRUE">FID</attrlabl><attalias Sync="TRUE">FID</attalias><attrtype Sync="TRUE">OID</attrtype><attwidth Sync="TRUE">4</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale><attrdef Sync="TRUE">Internal feature number.</attrdef><attrdefs>Environmental Systems Research Institute, Inc. (ESRI)</attrdefs><attrdomv><udom Sync="TRUE">Sequential unique whole numbers that are automatically generated.</udom></attrdomv></attr><attr><attrlabl Sync="TRUE">Shape</attrlabl><attalias Sync="TRUE">Shape</attalias><attrtype Sync="TRUE">Geometry</attrtype><attwidth Sync="TRUE">0</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale><attrdef Sync="TRUE">Feature geometry.</attrdef><attrdefs Sync="TRUE">ESRI</attrdefs><attrdomv><udom Sync="TRUE">Coordinates defining the features.</udom></attrdomv></attr><attr><attrlabl Sync="TRUE">NAME</attrlabl><attalias Sync="TRUE">NAME</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">25</attwidth><attrdef>Name of desert region</attrdef><attrdomv><udom>Name of desert region.</udom></attrdomv></attr></detailed>
+		<overview>
+			<eadetcit>Each polygon feature has 3 attributes. Two attributes are automatically generated by the GIS system (FID, Shape) for internal software purposes. The remaining attribute was assigned by the author (Metadata Contact) for analysis and[or] descriptive purposes (NAME).</eadetcit></overview>
+	</eainfo>
+	<distinfo>
+		<distrib>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>U.S. Geological Survey</cntorg>
+					<cntper>Earth Science Information Center (ESIC)</cntper>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>12201 Sunrise Valley Drive</address>
+					<city>Reston</city>
+					<state>VA</state>
+					<postal>20192</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>1-888-275-8747</cntvoice>
+				<cntemail>http://ask.usgs.gov/</cntemail>
+				<cntinst>Contact via email or phone.</cntinst>
+			</cntinfo>
+		</distrib>
+		<resdesc>Digital geospatial data sets for the transient ground-water flow model and hydrogeologic framework model, Death Valley regional ground-water flow system, Nevada and California</resdesc>
+		<distliab>Although these data have been processed successfully on a computer system at the U.S. Geological Survey, no warranty expressed or implied is made regarding the accuracy or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty. This disclaimer applies both to individual use of the data and aggregate use with other data. These data should be directly acquired from a U.S. Geological Survey server, and not indirectly through other sources that may have altered the data in some way.</distliab>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<formname>Shapefile</formname><filedec>unzip</filedec><transize Sync="TRUE">0.029</transize><dssize Sync="TRUE">0.029</dssize></digtinfo>
+				<digtopt>
+					<onlinopt>
+						<computer>
+							<networka>
+								<networkr>http://rockyitr.cr.usgs.gov/metadata/dvrfs/archive/deserts_sw.zip</networkr></networka>
+						</computer>
+					</onlinopt>
+				</digtopt>
+			</digform>
+			<fees>None</fees>
+		</stdorder>
+	</distinfo>
+	<metainfo>
+		<metd Sync="TRUE">20060926</metd>
+		<metc>
+			<cntinfo>
+				<cntperp>
+					<cntper>Carma A. San Juan</cntper>
+					<cntorg>U.S. Geological Survey</cntorg>
+				</cntperp>
+				<cntpos>Hydrologist</cntpos>
+				<cntaddr>
+					<addrtype>mailing address</addrtype>
+					<address>Denver Federal Center, Box 25046, MS 421</address>
+					<city>Denver</city>
+					<state>Colorado</state>
+					<postal>80225</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>(303) 236-5050</cntvoice>
+				<cntfax>(303) 236-5047</cntfax>
+				<cntemail>csanjuan@usgs.gov</cntemail>
+			</cntinfo>
+		</metc>
+		<metstdn Sync="TRUE">FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+		<metstdv Sync="TRUE">FGDC-STD-001-1998</metstdv>
+		<mettc Sync="TRUE">local time</mettc>
+		<langmeta Sync="TRUE">en</langmeta><metextns><onlink Sync="TRUE">http://www.esri.com/metadata/esriprof80.html</onlink><metprof Sync="TRUE">ESRI Metadata Profile</metprof></metextns></metainfo>
+	<Esri><CreaDate>20050810</CreaDate><CreaTime>21212900</CreaTime><SyncOnce>FALSE</SyncOnce><SyncDate>20060926</SyncDate><SyncTime>15573200</SyncTime><ModDate>20060926</ModDate><ModTime>15573200</ModTime><MetaID>{B2AB0F16-737A-4E2A-B5A7-4CFDE91F3248}</MetaID></Esri><dataIdInfo><envirDesc Sync="TRUE">Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 2; ESRI ArcCatalog 9.1.0.722</envirDesc><dataLang><languageCode Sync="TRUE" value="en"></languageCode></dataLang><idCitation><resTitle Sync="TRUE">deserts_sw</resTitle><presForm><PresFormCd Sync="TRUE" value="005"></PresFormCd></presForm></idCitation><spatRpType><SpatRepTypCd Sync="TRUE" value="001"></SpatRepTypCd></spatRpType><dataExt><geoEle><GeoBndBox esriExtentType="native"><westBL Sync="TRUE">247540.515625</westBL><eastBL Sync="TRUE">1158877.375</eastBL><northBL Sync="TRUE">4441620.5</northBL><southBL Sync="TRUE">3497551.75</southBL><exTypeCode Sync="TRUE">1</exTypeCode></GeoBndBox></geoEle></dataExt><geoBox esriExtentType="decdegrees"><westBL Sync="TRUE">-119.961136</westBL><eastBL Sync="TRUE">-109.300061</eastBL><northBL Sync="TRUE">40.126799</northBL><southBL Sync="TRUE">31.426889</southBL><exTypeCode Sync="TRUE">1</exTypeCode></geoBox></dataIdInfo><mdLang><languageCode Sync="TRUE" value="en"></languageCode></mdLang><mdStanName Sync="TRUE">ISO 19115 Geographic Information - Metadata</mdStanName><mdStanVer Sync="TRUE">DIS_ESRI1.0</mdStanVer><mdChar><CharSetCd Sync="TRUE" value="004"></CharSetCd></mdChar><mdHrLv><ScopeCd Sync="TRUE" value="005"></ScopeCd></mdHrLv><mdHrLvName Sync="TRUE">dataset</mdHrLvName><distInfo><distributor><distorTran><onLineSrc><orDesc Sync="TRUE">002</orDesc><linkage Sync="TRUE">file://\\igskahhwfs1ympb.igskahhwympb.cr.usgs.gov\depot\Carma\DVRFS MD FINAL\Approved_Data_1\deserts_sw.shp</linkage><protocol Sync="TRUE">Local Area Network</protocol></onLineSrc><transSize Sync="TRUE">0.029</transSize></distorTran><distorFormat><formatName Sync="TRUE">Shapefile</formatName></distorFormat></distributor></distInfo><refSysInfo><RefSystem><refSysID><identCode Sync="TRUE">NAD_1927_UTM_Zone_11N</identCode></refSysID></RefSystem></refSysInfo><spatRepInfo><VectSpatRep><topLvl><TopoLevCd Sync="TRUE" value="001"></TopoLevCd></topLvl><geometObjs Name="deserts_sw"><geoObjTyp><GeoObjTypCd Sync="TRUE" value="001"></GeoObjTypCd></geoObjTyp><geoObjCnt Sync="TRUE">4</geoObjCnt></geometObjs></VectSpatRep></spatRepInfo><mdDateSt Sync="TRUE">20060926</mdDateSt></metadata>
