@@ -36,14 +36,31 @@ the more dangerous."
 
 ## 2. Data sources
 
-| Factor | Source | Notes |
-|---|---|---|
-| Ambient summer temperature | PRISM Climate Group, July maximum temperature, averaged across 2014–2023 | Downloaded as ten separate monthly GeoTIFFs (`prism_tmax_us_25m_YYYY07`) at PRISM's public data service, then averaged. This is a 10-year approximate normal, not an official 30-year PRISM climate normal (that product needed a different access path than the one used here) |
-| Distance to major city | Straight-line (Euclidean, degree-space) distance to the nearest of Phoenix or Tucson | Uses only these two from `basemap_common.CITIES` — the other three entries (Nogales, Sasabe, Sonoyta) are small border towns used elsewhere as map labels, not "major cities" |
-| Distance to major road | Straight-line distance to the nearest Interstate/US/State-numbered highway | Same road layer (`Shape Files/tl_2021_04_prisecroads`, filtered to `RTTYP` I/U/S) already used for the basemap in every other figure |
-| Distance to a water source | Straight-line distance to the nearest Humane Borders water station | Uses `Water Stations 2000-2019.csv` — see `WATER_STATIONS_METHODOLOGY.md` for that dataset's own ~5 mile positional uncertainty, which carries through into this factor |
-| Slope | Derived from USGS 3DEP elevation data | See §4 — this required a real fix, not just a data pull |
-| Vegetation density (NDVI) | Derived from USGS NAIP 4-band aerial imagery | See §3 for the formula, the literature precedent, and a real data-quality fix |
+| Factor | Source | Direction | Notes |
+|---|---|---|---|
+| Ambient summer temperature | PRISM Climate Group, July maximum temperature, averaged across 2014–2023 | Hotter = more dangerous | Downloaded as ten separate monthly GeoTIFFs (`prism_tmax_us_25m_YYYY07`) at PRISM's public data service, then averaged. This is a 10-year approximate normal, not an official 30-year PRISM climate normal (that product needed a different access path than the one used here) |
+| Distance to major city | Straight-line (Euclidean, degree-space) distance to the nearest of Phoenix or Tucson | Farther = more dangerous | Uses only these two from `basemap_common.CITIES` — the other three entries (Nogales, Sasabe, Sonoyta) are small border towns used elsewhere as map labels, not "major cities" |
+| Distance to major road | Straight-line distance to the nearest Interstate/US/State-numbered highway | Farther = more dangerous | Same road layer (`Shape Files/tl_2021_04_prisecroads`, filtered to `RTTYP` I/U/S) already used for the basemap in every other figure |
+| Distance to a water source | Straight-line distance to the nearest Humane Borders water station | Farther = more dangerous | Uses `Water Stations 2000-2019.csv` — see `WATER_STATIONS_METHODOLOGY.md` for that dataset's own ~5 mile positional uncertainty, which carries through into this factor |
+| Slope | Derived from USGS 3DEP elevation data | Steeper = more dangerous | See §4 — this required a real fix, not just a data pull |
+| Vegetation density (NDVI) | Derived from USGS NAIP 4-band aerial imagery | Denser = more dangerous | See §3 for the formula, the literature precedent (denser vegetation is an obstacle, not protective shade), and a real data-quality fix |
+
+**Table 1a — descriptive statistics** (n=7,536 in-Arizona grid cells; regenerate via `python/summarize_danger_factors.py`, which also writes `docs/danger_index_factor_summary.csv`):
+
+| Factor | Min | Mean | Max | Std dev | Unit |
+|---|---|---|---|---|---|
+| Ambient summer temperature | 20.6 | 37.1 | 42.9 | 4.2 | °C |
+| Distance to major city | 1.2 | 79.6 | 183.0 | 39.0 | mi |
+| Distance to major road | 0.0 | 7.4 | 42.5 | 6.5 | mi |
+| Distance to water source | 0.3 | 75.4 | 194.9 | 43.2 | mi |
+| Slope | 0.01 | 3.10 | 17.79 | 3.03 | deg |
+| Vegetation density (NDVI) | -0.046 | 0.063 | 0.300 | 0.051 | unitless |
+
+These are the raw (pre-Z-score) values the composite index standardizes —
+the same numbers rendered directly on Figures 2 and 8's summary panel, now
+also available as text/CSV rather than only baked into the PNGs. Distance
+figures are approximate miles converted from degree-space (§8's caveat
+applies); mean/std dev use the sample (n−1) standard deviation.
 
 ## 3. Vegetation density (NDVI): the 6th factor
 

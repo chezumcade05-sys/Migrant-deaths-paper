@@ -1,0 +1,7 @@
+factor,min,mean,max,std_dev,unit,n
+"Ambient summer temperature",20.6,37.1,42.9,4.2,C,7536
+"Distance to major city",1.2,79.6,183.0,39.0,mi,7536
+"Distance to major road",0.0,7.4,42.5,6.5,mi,7536
+"Distance to water source",0.3,75.4,194.9,43.2,mi,7536
+"Slope",0.01,3.10,17.79,3.03,deg,7536
+"Vegetation density (NDVI)",-0.046,0.063,0.300,0.051,(unitless),7536
