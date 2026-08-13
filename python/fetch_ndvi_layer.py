@@ -24,7 +24,7 @@ Run this once (or re-run to refresh) to (re)generate the "ndvi" column.
 Safe to re-run: it recomputes that column and merges it into the existing
 CSV by (row, col), leaving slope_deg/july_tmax_c untouched.
 
-    .venv/bin/python fetch_ndvi_layer.py
+    .venv/bin/python python/fetch_ndvi_layer.py   (run from the repo root)
 """
 
 import io
@@ -33,7 +33,7 @@ import sys
 import urllib.request
 from pathlib import Path
 
-_VENV_DIR = Path(__file__).resolve().parent / ".venv"
+_VENV_DIR = Path(__file__).resolve().parent.parent / ".venv"
 _VENV_PYTHON = _VENV_DIR / "bin" / "python"
 if _VENV_PYTHON.exists() and Path(sys.prefix).resolve() != _VENV_DIR.resolve():
     os.execv(str(_VENV_PYTHON), [str(_VENV_PYTHON), str(Path(__file__).resolve()), *sys.argv[1:]])

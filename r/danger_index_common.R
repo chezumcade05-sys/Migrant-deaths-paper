@@ -160,7 +160,7 @@ render_danger_index <- function(out_filename = "figure2_reproduction_R.png",
   summary_h_in <- 1.9
   fig_h_in <- map_h_in + summary_h_in
 
-  out_path <- file.path(DATA_DIR, out_filename)
+  out_path <- file.path(FIGURES_DIR, out_filename)
   png(out_path, width = fig_w_in, height = fig_h_in, units = "in", res = 200)
   layout(matrix(1:2, nrow = 2), heights = c(map_h_in, summary_h_in))
   par(mar = c(1, 1, 3, 1))
@@ -385,7 +385,7 @@ render_overlay_figure <- function(out_filename = "figure8_reproduction_R.png",
   summary_h_in <- 1.9
   fig_h_in <- panel_h_in * 2 + summary_h_in
 
-  out_path <- file.path(DATA_DIR, out_filename)
+  out_path <- file.path(FIGURES_DIR, out_filename)
   png(out_path, width = fig_w_in, height = fig_h_in, units = "in", res = 200)
   layout(matrix(1:3, nrow = 3), heights = c(panel_h_in, panel_h_in, summary_h_in))
 

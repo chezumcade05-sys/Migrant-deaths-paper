@@ -33,15 +33,19 @@ against the other.
   hot-spot analysis on the full 2000–2019 dataset with no direct paper
   figure number. Both language versions produce numerically identical
   results to each other (same grid cell counts, same `Gi_Bin` distributions).
+- Figure 2, a rebuilt danger index (6 Z-scored factors — temperature,
+  distance to city/road/water, slope, vegetation density/NDVI — replacing
+  the original's ordinal-category scoring), and Figure 8, that danger index
+  overlaid with the hot spots from both periods. See
+  `DANGER_INDEX_METHODOLOGY.md` for the full write-up.
 - All of the above styled to match the originals' actual colors/legend
   (sampled directly from the embedded images in the paper's `.docx`), not
   guessed.
 
 **Not done / not attempted yet:**
-- Figure 1 (study-area overview map) and Figure 2 (danger index map) —
-  no scripts exist for these yet.
-- Figure 8 (danger index overlaid with hot spots) — same; this also depends
-  on Figure 2's danger-index calculation, which hasn't been built.
+- Figure 1 (plain study-area overview map, no death/danger data) — never
+  attempted; would mostly reuse the basemap layers already built for every
+  other figure.
 - Exact replication of the paper's original ArcGIS hot-spot parameters. This
   was investigated in real depth (see `Claude Hotspot documentation.md` §3–4)
   and deliberately **not** forced to a fake match — the grid cell size
@@ -49,8 +53,8 @@ against the other.
   documented rather than hidden. Worth reading before either of you cites
   specific hot-spot cell counts anywhere.
 
-If either of you starts on Figure 1/2/8 or anything else, update this
-section so the other person isn't duplicating work.
+If either of you starts on Figure 1 or anything else, update this section so
+the other person isn't duplicating work.
 
 ## 3. Getting set up
 
@@ -95,27 +99,26 @@ for exact run commands once set up.
   band, `Gi_Bin` distribution) every time they run — that's intentional and
   is the fastest way to sanity-check a run without opening the image.
 
-## 5. No version control yet — read this before editing concurrently
+## 5. Version control — read this before editing concurrently
 
-This folder is **not currently a git repository.** That matters a lot for
-"working on it at the same time": right now, if you both have a copy (email
-attachment, shared drive, etc.) and edit the same file independently, there
-is no merge — whoever saves/sends last silently overwrites the other
-person's changes, with no warning and no way to recover the lost version.
+This is now a git repository, pushed to GitHub:
+https://github.com/chezumcade05-sys/Migrant-deaths-paper (public). Clone it
+rather than working from an emailed/shared-drive copy — that gives you real
+merging, history, and the ability to see exactly what changed and who
+changed it, instead of silently overwriting each other's edits.
 
-Two ways to handle this, pick one before you both start editing:
+A few things worth knowing about what's (deliberately) *not* in the repo,
+via `.gitignore`:
+- **`.venv/`** and any R package library — not portable between machines,
+  rebuild locally (see §3).
+- **The fence geodatabase's data is included**, despite its FOUO marking —
+  a deliberate call already made once; worth being aware of before you fork
+  or mirror this repo elsewhere.
+- The unpublished paper draft, reviewer-facing notes, the authors' own
+  precomputed ArcGIS validation output, and a folder of raw research
+  spreadsheets that were never part of this reproduction's own pipeline —
+  none of that belongs in a public repo alongside code.
 
-1. **Set up git** (recommended if there's any real back-and-forth planned).
-   A private GitHub/GitLab repo, or even just a shared git remote, gives you
-   real merging, history, and the ability to see exactly what changed and
-   who changed it. This is a quick one-time setup — ask if you want help
-   with it.
-2. **Informal file-ownership split**, if git feels like overkill for the
-   remaining work: agree explicitly on who's touching which files before
-   starting a session, and don't both have the same script open for editing
-   at the same time. Fragile for anything beyond quick, well-separated
-   changes, but workable for small edits.
-
-Either way, **do not sync the `.venv` folder or R package library** through
-whatever you use to share files (see §3) — exclude it explicitly if you're
-using a shared drive that syncs everything by default.
+If you add new data files, check whether they should be `.gitignore`d
+before committing — same questions as above (portable? sensitive? actually
+part of the pipeline?).

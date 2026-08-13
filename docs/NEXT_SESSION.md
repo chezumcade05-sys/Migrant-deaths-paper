@@ -54,10 +54,6 @@ same water station layer (`Water Stations 2000-2019.csv`). Start with
 
 ## Open questions — not resolved, still worth a decision
 
-- **No version control.** This folder still isn't a git repository. Flagged
-  in `COAUTHOR_CONTEXT.md` §5 with two options (set up git, or an informal
-  file-ownership split) — no decision made yet. Matters more now that
-  there's more to lose across sessions/collaborators.
 - **The "paywalled data" question from your coauthor** — you mentioned a
   coworker got a "paywalled" error trying to open something you sent, and
   I asked follow-up questions (what exact error, how was it shared, which
@@ -67,13 +63,17 @@ same water station layer (`Water Stations 2000-2019.csv`). Start with
 
 ## Quick orientation if you're picking this up fresh
 
+The repo is organized into `python/`, `r/`, `data/`, `figures/`, and `docs/`
+(everything below except README.md itself lives in `docs/`) — see README.md
+§0 for the full layout.
+
 1. **`README.md`** — pipeline overview, file table, how to run anything.
-2. **`COAUTHOR_CONTEXT.md`** — environment setup (Python `.venv` vs. R
+2. **`docs/COAUTHOR_CONTEXT.md`** — environment setup (Python `.venv` vs. R
    `install.packages("sf")`), plus the gotchas that cost real time
    (non-portable `.venv`, per-machine IDE interpreter settings, the FOUO
    marking on the fence data).
-3. **`Claude Hotspot documentation.md`** / **`WATER_STATIONS_METHODOLOGY.md`**
-   / **`DANGER_INDEX_METHODOLOGY.md`** — the statistical/data deep-dives,
+3. **`docs/Claude Hotspot documentation.md`** / **`docs/WATER_STATIONS_METHODOLOGY.md`**
+   / **`docs/DANGER_INDEX_METHODOLOGY.md`** — the statistical/data deep-dives,
    one per analysis. Each is explicit about where the reproduction is
    known to diverge from the original paper's methodology and why.
 

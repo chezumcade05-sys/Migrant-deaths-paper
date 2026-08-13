@@ -8,7 +8,7 @@
 #
 # Requires the "sf" package: install.packages("sf")
 #
-# To run: Rscript figure4.R
+# To run (from the repo root): Rscript r/figure4.R
 #   (or open in RStudio and click Source -- either way, the script locates
 #   its own folder automatically, so your working directory doesn't matter)
 

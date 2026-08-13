@@ -312,7 +312,7 @@ def render_danger_index(out_filename="figure2_reproduction.png",
     # Not fig.tight_layout() here -- it would discard the explicit
     # subplots_adjust() margins set above that reserve room for the
     # factor-summary text below the map.
-    out_path = bc.DATA_DIR / out_filename
+    out_path = bc.FIGURES_DIR / out_filename
     fig.savefig(out_path, dpi=200)
     print(f"Saved plot to {out_path}")
     print(stamp)
@@ -510,7 +510,7 @@ def render_overlay_figure(out_filename="figure8_reproduction.png",
     import datetime
     stamp = f"generated {datetime.datetime.now():%Y-%m-%d %H:%M:%S}"
 
-    out_path = bc.DATA_DIR / out_filename
+    out_path = bc.FIGURES_DIR / out_filename
     fig.savefig(out_path, dpi=200)
     print(f"Saved plot to {out_path}")
     print(stamp)

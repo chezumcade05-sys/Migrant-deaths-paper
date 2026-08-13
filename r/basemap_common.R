@@ -31,7 +31,11 @@ WATER_STATION_COLOR  <- "#00b7c3"
 # top of any figureN.R for that bootstrap snippet.
 # ---------------------------------------------------------------------------
 if (!exists("SCRIPT_DIR")) stop("SCRIPT_DIR must be set before sourcing basemap_common.R -- see the top of figure4.R")
-DATA_DIR   <- SCRIPT_DIR
+# Repo layout: this file lives in r/, siblings to python/, data/, figures/,
+# and docs/ at the repo root -- REPO_ROOT is r/'s parent.
+REPO_ROOT   <- dirname(SCRIPT_DIR)
+DATA_DIR    <- file.path(REPO_ROOT, "data")
+FIGURES_DIR <- file.path(REPO_ROOT, "figures")
 DEATH_CSV  <- file.path(DATA_DIR, "Original death data.csv")
 FENCE_GDB  <- file.path(DATA_DIR, "Original Fence data", "01-ORIGINAL.gdb")
 SHAPE_DIR  <- file.path(DATA_DIR, "Shape Files")
@@ -219,7 +223,7 @@ render_figure <- function(deaths_subset, death_label, title, out_filename) {
   fig_w_in <- 12
   fig_h_in <- fig_w_in * (lat_span * geo_aspect) / lon_span
 
-  out_path <- file.path(DATA_DIR, out_filename)
+  out_path <- file.path(FIGURES_DIR, out_filename)
   png(out_path, width = fig_w_in, height = fig_h_in, units = "in", res = 200)
   par(mar = c(1, 1, 3, 1))
   plot(1, type = "n", xlim = c(BBOX$min_lon, BBOX$max_lon), ylim = c(BBOX$min_lat, BBOX$max_lat),

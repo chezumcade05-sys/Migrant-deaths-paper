@@ -439,7 +439,7 @@ python3 -m venv .venv
       <h3>Step 4 — Run a figure</h3>
       <div class="code-wrap">
         <button class="copy-btn" type="button" aria-label="Copy run command">Copy</button>
-        <pre>./.venv/bin/python figure4.py</pre>
+        <pre>./.venv/bin/python python/figure4.py</pre>
       </div>
       <p>A line of text will print out, ending with <code class="inline">Saved plot to ...</code> — that's success.</p>
     </div>
@@ -470,7 +470,7 @@ python3 -m venv .venv
       <p>Open <code class="inline">figure4.R</code> in RStudio and click <strong>Source</strong> (top-right of the editor pane) — or, in the Console, type:</p>
       <div class="code-wrap">
         <button class="copy-btn" type="button" aria-label="Copy source command">Copy</button>
-        <pre>source("figure4.R")</pre>
+        <pre>source("r/figure4.R")</pre>
       </div>
     </div>
   </section>
@@ -485,8 +485,8 @@ python3 -m venv .venv
         <code class="inline">figure4</code> is the simplest one to try first — a map of
         recorded deaths before 2008. Once it finishes, a new file called
         <code class="inline">figure4_reproduction.png</code> (or
-        <code class="inline">_R.png</code>) appears in the same folder. Open it like any
-        image file.
+        <code class="inline">_R.png</code>) appears in the <code class="inline">figures</code>
+        folder. Open it like any image file.
       </p>
       <p>From there, every other figure works the same way — just swap the number:</p>
       <table>
@@ -534,13 +534,13 @@ python3 -m venv .venv
       <h2>Where to go for more detail</h2>
     </div>
     <div class="step-body">
-      <p>Everything above is intentionally the short version. For more depth, these files live in the same folder:</p>
+      <p>Everything above is intentionally the short version. For more depth, these files live alongside this one (README.md at the top level, the rest in the <code class="inline">docs</code> folder):</p>
       <table>
         <tr><th>File</th><th>What's in it</th></tr>
         <tr><td><code class="inline">README.md</code></td><td>The full technical pipeline, every script explained</td></tr>
-        <tr><td><code class="inline">COAUTHOR_CONTEXT.md</code></td><td>A faster-orientation note for a technical collaborator</td></tr>
-        <tr><td><code class="inline">DANGER_INDEX_METHODOLOGY.md</code></td><td>How the danger index is built and why</td></tr>
-        <tr><td><code class="inline">REFERENCES.md</code></td><td>Every outside data source used, with citations</td></tr>
+        <tr><td><code class="inline">docs/COAUTHOR_CONTEXT.md</code></td><td>A faster-orientation note for a technical collaborator</td></tr>
+        <tr><td><code class="inline">docs/DANGER_INDEX_METHODOLOGY.md</code></td><td>How the danger index is built and why</td></tr>
+        <tr><td><code class="inline">docs/REFERENCES.md</code></td><td>Every outside data source used, with citations</td></tr>
       </table>
     </div>
   </section>

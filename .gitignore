@@ -13,7 +13,7 @@ __pycache__/
 .DS_Store
 
 # Unused TIGER/Line layer (125MB, not referenced by any script -- see README.md)
-Shape Files/tl_2021_us_county/
+data/Shape Files/tl_2021_us_county/
 
 # Unpublished paper draft and reviewer-facing materials -- not part of the
 # code/data pipeline, and not for public distribution ahead of publication.

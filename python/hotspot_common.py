@@ -260,7 +260,7 @@ def render_hotspot_figure(deaths_subset, death_label, title, out_filename):
     ax.set_aspect(geo_aspect)
 
     fig.tight_layout()
-    out_path = bc.DATA_DIR / out_filename
+    out_path = bc.FIGURES_DIR / out_filename
     fig.savefig(out_path, dpi=200)
     print(f"Saved plot to {out_path}")
     plt.show()

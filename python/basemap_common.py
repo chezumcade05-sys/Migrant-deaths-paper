@@ -48,7 +48,11 @@ RESERVATION_PURPLE = "#3d1a5b"
 # against both the green death markers and the navy fence lines.
 WATER_STATION_COLOR = "#00b7c3"
 
-DATA_DIR = Path(__file__).resolve().parent
+# Repo layout: this file lives in python/, siblings to r/, data/, figures/,
+# and docs/ at the repo root -- REPO_ROOT is python/'s parent.
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
+FIGURES_DIR = REPO_ROOT / "figures"
 DEATH_CSV = DATA_DIR / "Original death data.csv"
 FENCE_GDB = DATA_DIR / "Original Fence data" / "01-ORIGINAL.gdb"
 SHAPE_DIR = DATA_DIR / "Shape Files"
@@ -351,7 +355,7 @@ def render_figure(deaths_subset, death_label, title, out_filename):
     stamp = f"generated {datetime.datetime.now():%Y-%m-%d %H:%M:%S} -- {fence_status}"
 
     fig.tight_layout()
-    out_path = DATA_DIR / out_filename
+    out_path = FIGURES_DIR / out_filename
     fig.savefig(out_path, dpi=200)
     print(f"Saved plot to {out_path}")
     print(stamp)

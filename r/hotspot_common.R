@@ -145,7 +145,7 @@ render_hotspot_figure <- function(deaths_subset, death_label, title, out_filenam
   fig_w_in <- 12
   fig_h_in <- fig_w_in * (lat_span * geo_aspect) / lon_span
 
-  out_path <- file.path(DATA_DIR, out_filename)
+  out_path <- file.path(FIGURES_DIR, out_filename)
   png(out_path, width = fig_w_in, height = fig_h_in, units = "in", res = 200)
   par(mar = c(1, 1, 3, 1))
   plot(1, type = "n", xlim = c(BBOX$min_lon, BBOX$max_lon), ylim = c(BBOX$min_lat, BBOX$max_lat),

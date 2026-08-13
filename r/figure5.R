@@ -11,7 +11,7 @@
 # for consistency with figure3.R/figure4.R, same as the Python version.
 #
 # Requires the "sf" package: install.packages("sf")
-# To run: Rscript figure5.R
+# To run (from the repo root): Rscript r/figure5.R
 
 .get_script_dir <- function() {
   cmd_args <- commandArgs(trailingOnly = FALSE)

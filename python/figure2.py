@@ -7,14 +7,14 @@ full write-up of what changed and why.
 
 Requires the "sf"-equivalent Python GIS stack (geopandas/pyogrio/shapely)
 already used by the other figures, same .venv.
-To run: .venv/bin/python figure2.py
+To run (from the repo root): .venv/bin/python python/figure2.py
 """
 
 import os
 import sys
 from pathlib import Path
 
-_VENV_DIR = Path(__file__).resolve().parent / ".venv"
+_VENV_DIR = Path(__file__).resolve().parent.parent / ".venv"
 _VENV_PYTHON = _VENV_DIR / "bin" / "python"
 if _VENV_PYTHON.exists() and Path(sys.prefix).resolve() != _VENV_DIR.resolve():
     os.execv(str(_VENV_PYTHON), [str(_VENV_PYTHON), str(Path(__file__).resolve()), *sys.argv[1:]])

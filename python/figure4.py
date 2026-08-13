@@ -8,16 +8,17 @@ figure5.py via basemap_common.py -- see that file for data requirements
 and layer details. This file only picks which death points to plot.
 
 To run in VS Code:
-    1. Open this folder in VS Code and install the Microsoft "Python"
-       extension if you don't already have it.
+    1. Open the repo root folder in VS Code and install the Microsoft
+       "Python" extension if you don't already have it.
     2. A virtual environment with every dependency (including geopandas/
-       pyogrio for the fence-line overlay) is already set up at .venv/ in
-       this same folder. This script re-execs into it automatically below,
-       so it works regardless of which interpreter VS Code has selected --
-       but you can also select it manually via Cmd+Shift+P ->
-       "Python: Select Interpreter" -> the entry under ./.venv/bin/python.
-    3. Open this file and click "Run Python File", or in the integrated
-       terminal: .venv/bin/python figure4.py
+       pyogrio for the fence-line overlay) is set up at .venv/ in the repo
+       root (a level up from this file, in python/). This script re-execs
+       into it automatically below, so it works regardless of which
+       interpreter VS Code has selected -- but you can also select it
+       manually via Cmd+Shift+P -> "Python: Select Interpreter" -> the
+       entry under ./.venv/bin/python.
+    3. Open this file and click "Run Python File", or from the repo root
+       in the integrated terminal: .venv/bin/python python/figure4.py
 
     If you ever need to rebuild the environment from scratch (e.g. on a
     different machine), note it was created with Python 3.9 specifically
@@ -38,7 +39,7 @@ from pathlib import Path
 # robust regardless of what's selected in the UI, re-exec under the .venv/
 # interpreter directly if we're not already running under it -- this must
 # happen before importing anything that isn't in the standard library.
-_VENV_DIR = Path(__file__).resolve().parent / ".venv"
+_VENV_DIR = Path(__file__).resolve().parent.parent / ".venv"
 _VENV_PYTHON = _VENV_DIR / "bin" / "python"
 # Compare sys.prefix (the active environment root), not sys.executable --
 # this venv's python is itself a symlink through to the same base system

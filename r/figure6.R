@@ -8,7 +8,7 @@
 #
 # See "Claude Hotspot documentation.md" for the full statistical write-up.
 # Requires the "sf" package: install.packages("sf")
-# To run: Rscript figure6.R
+# To run (from the repo root): Rscript r/figure6.R
 
 .get_script_dir <- function() {
   cmd_args <- commandArgs(trailingOnly = FALSE)
