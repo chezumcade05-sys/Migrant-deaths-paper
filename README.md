@@ -95,7 +95,7 @@ for exact sources: Census TIGER/Line 2021 for roads/state/tribal lands, USGS
 | `danger_index_common.py` | Shared library — not run directly. Rebuilds the paper's Figure 2 danger index with a different factor set (temperature, distance to city/road/water, slope, vegetation density) and Z-score-based scoring, on the same grid as the hot-spot analysis. |
 | `figure2.py` | **Run this.** The rebuilt danger index (Figure 2). |
 | `figure8.py` | **Run this.** Danger index overlaid with hot spots (Figure 8) — both pre- and post-SFA, as two stacked panels sharing one legend. Reuses the exact same colors as `figure2.py`/`figure6.py`/`figure7.py` (danger palette, `HOT_99`/`HOT_95`), just as unfilled outlines so the danger-index color shows through each cell. |
-| `fetch_ndvi_layer.py` | One-off/re-runnable data-acquisition script that (re)populates the `ndvi` column of `data/Danger Index Environmental Layers.csv` from USGS NAIP imagery. Not part of the normal figure-rendering pipeline. |
+| `fetch_ndvi_layer.py` | One-off/re-runnable data-acquisition script that (re)populates the `ndvi` column of `data/Danger Index Environmental Layers.csv` from USGS NAIP imagery. Not part of the normal figure-rendering pipeline, and **Python-only, deliberately** — no R equivalent exists. **R-only users:** this doesn't affect you for running any figure — the `ndvi` column ships already populated in the committed CSV, and `danger_index_common.R` just reads it as a plain column like `slope_deg`. This script only matters if you want to *refresh* the NDVI data itself (e.g. against newer imagery), which currently requires Python. |
 
 **Root-level files:**
 | File | Role |

@@ -83,7 +83,13 @@ the cited paper's; only the imagery source differs, substituted for
 practical reasons (no authentication or heavy GIS stack required, fits
 the same lightweight `/exportImage`-plus-Pillow pattern already
 established in this codebase — no rasterio/GDAL needed). See
-`fetch_ndvi_layer.py`.
+`fetch_ndvi_layer.py` — Python-only, unlike every other module in this
+project, which has a matched R port. This is deliberate rather than an
+oversight: the resulting `ndvi` column ships already populated in the
+committed CSV, so `danger_index_common.R` never needs to run this script
+— it just reads the column. The gap only matters if someone wants to
+regenerate the NDVI data itself from R specifically, which isn't
+currently supported.
 
 **A real data-quality bug, found and fixed:** the raw NDVI pull initially
 produced a handful of extreme values (exactly −1 or up to +0.97) at grid
