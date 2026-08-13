@@ -12,6 +12,38 @@ that it did it correctly.
 **New here?** See `GETTING_STARTED.html` for a plain-language, no-coding-
 background-needed walkthrough. This README is the technical reference.
 
+**Reviewing this without cloning the repo?** Every figure below is a live
+image already committed to `figures/` — GitHub renders them inline on this
+page, so scrolling down is enough; no need to clone, install anything, or
+run any script. These are the Python outputs; the R versions (`_R.png` in
+the same folder) are numerically validated to match — see §6.
+
+## Figure previews
+
+**Figure 2 — Danger index** (rebuilt: 6 Z-scored factors, see `docs/DANGER_INDEX_METHODOLOGY.md`)
+![Figure 2: Danger Index](figures/figure2_reproduction.png)
+
+**Figure 3 — All migrant deaths, 2000–2019** (n = 3,041)
+![Figure 3: Migrant Deaths, 2000-2019](figures/figure3_reproduction.png)
+
+**Figure 4 — Pre-SFA deaths, 2000–2007** (n = 1,215)
+![Figure 4: Migrant Deaths, 2000-2007](figures/figure4_reproduction.png)
+
+**Figure 5 — Post-SFA deaths, 2008–2019** (n = 1,826)
+![Figure 5: Migrant Deaths, 2008-2019](figures/figure5_reproduction.png)
+
+**Figure 6 — Hot-spot analysis, pre-SFA**
+![Figure 6: Hot-Spot Analysis, 2000-2007](figures/figure6_reproduction.png)
+
+**Figure 7 — Hot-spot analysis, post-SFA**
+![Figure 7: Hot-Spot Analysis, 2008-2019](figures/figure7_reproduction.png)
+
+**Figure 8 — Danger index with hot spots overlaid, both periods**
+![Figure 8: Danger Index and Hot Spots](figures/figure8_reproduction.png)
+
+**Extra — hot-spot analysis, all years combined** (no direct paper equivalent)
+![Hot-Spot Analysis, all years](figures/figure3_hotspot_reproduction.png)
+
 ## 0. Repo layout
 
 ```
