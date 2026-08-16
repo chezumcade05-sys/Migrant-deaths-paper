@@ -15,9 +15,10 @@ __pycache__/
 # Unused TIGER/Line layer (125MB, not referenced by any script -- see README.md)
 data/Shape Files/tl_2021_us_county/
 
-# Unpublished paper draft and reviewer-facing materials -- not part of the
-# code/data pipeline, and not for public distribution ahead of publication.
-Bansak_Blanco_Coon_Dieringer_Hot_Spots_2025_CEP.docx
+# Unpublished paper draft (and any revision of it) plus reviewer-facing
+# materials -- not part of the code/data pipeline, and not for public
+# distribution ahead of publication.
+Bansak_Blanco_Coon_Dieringer_Hot_Spots_2025_CEP*.docx
 ~$*.docx
 Hot Spot Analysis Methodology Notes.docx
 
