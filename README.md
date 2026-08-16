@@ -112,6 +112,9 @@ for exact sources: Census TIGER/Line 2021 for roads/state/tribal lands, USGS
 | `summarize_hotspot_raster.py` | Reporting utility — not part of the figure pipeline. Computes the Gi\* hot-spot summary (by period) and the shared raster grid specification, printed as Markdown and written to `docs/hotspot_raster_summary.csv`. Re-run whenever the death data or grid parameters change. |
 | `docs/hotspot_raster_summary.csv` | Machine-readable version of the two tables above. |
 | `docs/hotspot_raster_tables.docx` | The same two tables as publication-style three-line academic tables (landscape orientation — Table 1 has 9 columns), ready to paste into the manuscript. |
+| `summarize_death_demographics.py` | Reporting utility — not part of the figure pipeline. Recreates the paper's Table 4 ("Sample of Summary Statistics" — gender, age group, cause of death by Total/pre-SFA/post-SFA), computed directly from `data/Original death data.csv`. Writes `docs/table4_summary_statistics.csv`. Re-run whenever the death-records CSV changes. |
+| `docs/table4_summary_statistics.csv` | Machine-readable version of Table 4 above. |
+| `docs/table4_summary_statistics.docx` | Table 4 as a publication-style three-line academic table, ready to paste into the manuscript. Content matches the original Table 4 (independently re-verified from source data), reformatted only. |
 
 **R versions**: every script above also has an `.R` equivalent in `r/`
 (`basemap_common.R`, `hotspot_common.R`, `danger_index_common.R`,

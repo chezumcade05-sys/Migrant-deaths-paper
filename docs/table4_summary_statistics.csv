@@ -1,0 +1,14 @@
+characteristic,total,before,after
+"Male",2,570 (85%),967 (80%),1,603 (88%)
+"Female",451 (15%),246 (20%),205 (11%)
+"Unknown (gender)",20 (1%),2 (0%),18 (1%)
+"Under 18",95 (3%),58 (5%),37 (2%)
+"18-30",902 (30%),407 (33%),495 (27%)
+"Over 30",949 (31%),397 (33%),552 (30%)
+"Unknown (age)",1,095 (36%),353 (29%),742 (41%)
+"Exposure",1,159 (38%),645 (53%),514 (28%)
+"Blunt force injury",160 (5%),91 (7%),69 (4%)
+"Undetermined/skeletal remains",1,486 (49%),354 (29%),1,132 (62%)
+"Other",236 (8%),125 (10%),111 (6%)
+"Total reported deaths",3041,1215,1826
+"Average deaths per year",152,152,152
