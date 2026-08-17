@@ -31,6 +31,6 @@ print(f"All deaths, 2000-2019, in this extract: {len(subset)}")
 hc.render_hotspot_figure(
     deaths_subset=subset,
     death_label="Location of Remains 2000-2019",
-    title="Hot-Spot Analysis (no paper equivalent): Migrant Deaths, 2000-2019",
-    out_filename="figure3_hotspot_reproduction.png",
+    title="Figure 9: Hot-Spot Analysis, All Years Combined (2000-2019, no paper equivalent)",
+    out_filename="figure9_hotspot_allyears.png",
 )

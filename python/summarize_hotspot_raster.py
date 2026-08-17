@@ -40,7 +40,7 @@ import danger_index_common as dc
 def hotspot_summary_rows():
     """One row per period: n deaths, populated grid cells, calibrated
     distance band, avg neighbors, and the Gi_Bin distribution. Matches
-    exactly what figure6.py/figure7.py/figure3_hotspot.py each print --
+    exactly what figure6.py/figure7.py/figure9_hotspot.py each print --
     computed the same way (same filters), not read from a stale record."""
     deaths = bc.load_deaths()
     periods = [

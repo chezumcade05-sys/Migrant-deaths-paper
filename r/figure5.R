@@ -40,6 +40,6 @@ if (nrow(subset) != 1826) {
 render_figure(
   deaths_subset = subset,
   death_label = "Location of Remains 2008-2019",
-  title = "Figure 5: Migrant Deaths, 2008-2019",
+  title = "Figure 5: Migrant Deaths, Post-SFA (2008-2019)",
   out_filename = "figure5_reproduction_R.png"
 )

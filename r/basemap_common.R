@@ -6,7 +6,7 @@
 # layers, same layout) so results match between the two languages.
 #
 # Not run directly -- figure3.R / figure4.R / figure5.R / figure6.R /
-# figure7.R / figure3_hotspot.R each source() this file.
+# figure7.R / figure9_hotspot.R each source() this file.
 
 suppressPackageStartupMessages(library(sf))
 

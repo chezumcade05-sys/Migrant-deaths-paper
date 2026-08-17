@@ -33,6 +33,6 @@ cat(sprintf("Pre-SFA (2000-2007) deaths in this extract: %d\n", nrow(subset)))
 render_hotspot_figure(
   deaths_subset = subset,
   death_label = "Location of Remains 2000-2007",
-  title = "Figure 6: Hot-Spot Analysis, 2000-2007",
+  title = "Figure 6: Hot-Spot Analysis, Pre-SFA (2000-2007)",
   out_filename = "figure6_reproduction_R.png"
 )

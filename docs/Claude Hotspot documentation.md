@@ -1,7 +1,7 @@
  # Hot-Spot Analysis Methodology
 
 This document explains the statistical method behind `figure6.py`, `figure7.py`,
-and `figure3_hotspot.py` (implemented in `hotspot_common.py`), which reproduce
+and `figure9_hotspot.py` (implemented in `hotspot_common.py`), which reproduce
 Figures 6 and 7 from Bansak, Blanco, Coon & Dieringer (2025) plus the same
 analysis applied to the full 2000–2019 dataset. Read this before trusting the
 output — it documents every assumption, where I validated against the paper's

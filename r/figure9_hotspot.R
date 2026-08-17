@@ -5,10 +5,10 @@
 # reproduced in figure6.R / figure7.R) -- but the same Getis-Ord Gi* method
 # (see hotspot_common.R) is applied here to the full dataset for comparison.
 #
-# R port of figure3_hotspot.py.
+# R port of figure9_hotspot.py.
 # See "Claude Hotspot documentation.md" for the full statistical write-up.
 # Requires the "sf" package: install.packages("sf")
-# To run (from the repo root): Rscript r/figure3_hotspot.R
+# To run (from the repo root): Rscript r/figure9_hotspot.R
 
 .get_script_dir <- function() {
   cmd_args <- commandArgs(trailingOnly = FALSE)
@@ -33,6 +33,6 @@ cat(sprintf("All deaths, 2000-2019, in this extract: %d\n", nrow(subset)))
 render_hotspot_figure(
   deaths_subset = subset,
   death_label = "Location of Remains 2000-2019",
-  title = "Hot-Spot Analysis (no paper equivalent): Migrant Deaths, 2000-2019",
-  out_filename = "figure3_hotspot_reproduction_R.png"
+  title = "Figure 9: Hot-Spot Analysis, All Years Combined (2000-2019, no paper equivalent)",
+  out_filename = "figure9_hotspot_allyears_R.png"
 )

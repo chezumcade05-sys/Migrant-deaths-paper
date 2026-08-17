@@ -18,7 +18,7 @@ All eight figure scripts run cleanly end to end, in both languages:
 | 6 (hot-spot, pre-SFA) | `figure6.py` / `figure6.R` | Done |
 | 7 (hot-spot, post-SFA) | `figure7.py` / `figure7.R` | Done |
 | 8 (danger index + hot spots overlay) | `figure8.py` / `figure8.R` | Done — two stacked panels (pre-/post-SFA) rather than the original's single combined map |
-| — (hot-spot, all years, no paper equivalent) | `figure3_hotspot.py` / `figure3_hotspot.R` | Done |
+| — (hot-spot, all years, no paper equivalent) | `figure9_hotspot.py` / `figure9_hotspot.R` | Done |
 
 Every figure shares the same basemap (`basemap_common.py`/`.R`) and the
 same water station layer (`Water Stations 2000-2019.csv`). Start with

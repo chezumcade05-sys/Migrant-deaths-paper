@@ -1,8 +1,10 @@
-# Reproducing Figures 2–8
+# Reproducing Figures 1–8
 
-This repo reproduces Figures 2–8 from Bansak, Blanco, Coon & Dieringer (2025),
-*"Border Walls and Death on the US-Mexico Border,"* plus one extra hot-spot
-analysis (all years combined) that has no direct equivalent in the paper.
+This repo reproduces Figures 1–8 from Bansak, Blanco, Coon & Dieringer (2025),
+*"Border Walls and Death on the US-Mexico Border,"* plus two supplementary
+figures with no direct equivalent in the paper: Figure 9 (a hot-spot analysis
+of all years combined) and Figure 10 (the raw slope/vegetation-density grids
+that feed the danger index, shown descriptively rather than Z-scored).
 Everything here is built from the paper's own underlying data — nothing about
 *which* deaths are pre-/post-SFA, or where the fence/desert/reservation
 boundaries are, was eyeballed from the published images. This document is the
@@ -20,6 +22,9 @@ the same folder) are numerically validated to match — see §6.
 
 ## Figure previews
 
+**Figure 1 — Geographic reference map** (Arizona boundary, roads, Sonoran Desert, Tohono O'odham Nation Reservation, fencing by period)
+![Figure 1: Geographic Features of Arizona-Mexico Border](figures/figure1_reproduction.png)
+
 **Figure 2 — Danger index** (rebuilt: 6 Z-scored factors, see `docs/DANGER_INDEX_METHODOLOGY.md`)
 ![Figure 2: Danger Index](figures/figure2_reproduction.png)
 
@@ -27,22 +32,25 @@ the same folder) are numerically validated to match — see §6.
 ![Figure 3: Migrant Deaths, 2000-2019](figures/figure3_reproduction.png)
 
 **Figure 4 — Pre-SFA deaths, 2000–2007** (n = 1,215)
-![Figure 4: Migrant Deaths, 2000-2007](figures/figure4_reproduction.png)
+![Figure 4: Migrant Deaths, Pre-SFA (2000-2007)](figures/figure4_reproduction.png)
 
 **Figure 5 — Post-SFA deaths, 2008–2019** (n = 1,826)
-![Figure 5: Migrant Deaths, 2008-2019](figures/figure5_reproduction.png)
+![Figure 5: Migrant Deaths, Post-SFA (2008-2019)](figures/figure5_reproduction.png)
 
 **Figure 6 — Hot-spot analysis, pre-SFA**
-![Figure 6: Hot-Spot Analysis, 2000-2007](figures/figure6_reproduction.png)
+![Figure 6: Hot-Spot Analysis, Pre-SFA (2000-2007)](figures/figure6_reproduction.png)
 
 **Figure 7 — Hot-spot analysis, post-SFA**
-![Figure 7: Hot-Spot Analysis, 2008-2019](figures/figure7_reproduction.png)
+![Figure 7: Hot-Spot Analysis, Post-SFA (2008-2019)](figures/figure7_reproduction.png)
 
 **Figure 8 — Danger index with hot spots overlaid, both periods**
 ![Figure 8: Danger Index and Hot Spots](figures/figure8_reproduction.png)
 
-**Extra — hot-spot analysis, all years combined** (no direct paper equivalent)
-![Hot-Spot Analysis, all years](figures/figure3_hotspot_reproduction.png)
+**Figure 9 — Hot-spot analysis, all years combined** (no direct paper equivalent)
+![Figure 9: Hot-Spot Analysis, All Years Combined](figures/figure9_hotspot_allyears.png)
+
+**Figure 10 — Raw slope and vegetation-density grids** (descriptive, not Z-scored — shows how two of the danger index's six inputs are actually distributed; Python-only so far, no R port yet)
+![Figure 10: Raw Environmental Factor Rasters](figures/figure10_raw_factors.png)
 
 ## 0. Repo layout
 
@@ -91,10 +99,14 @@ for exact sources: Census TIGER/Line 2021 for roads/state/tribal lands, USGS
 | `figure5.py` | **Run this.** Post-SFA deaths, 2008–2019 (Figure 5). |
 | `figure6.py` | **Run this.** Hot-spot analysis, pre-SFA (Figure 6). |
 | `figure7.py` | **Run this.** Hot-spot analysis, post-SFA (Figure 7). |
-| `figure3_hotspot.py` | **Run this.** Hot-spot analysis, all years combined (no paper figure number — extends the same method to the full dataset). |
+| `figure9_hotspot.py` | **Run this.** Hot-spot analysis, all years combined (Figure 9 — no paper figure number, extends the same method to the full dataset). |
 | `danger_index_common.py` | Shared library — not run directly. Rebuilds the paper's Figure 2 danger index with a different factor set (temperature, distance to city/road/water, slope, vegetation density) and Z-score-based scoring, on the same grid as the hot-spot analysis. |
 | `figure2.py` | **Run this.** The rebuilt danger index (Figure 2). |
 | `figure8.py` | **Run this.** Danger index overlaid with hot spots (Figure 8) — both pre- and post-SFA, as two stacked panels sharing one legend. Reuses the exact same colors as `figure2.py`/`figure6.py`/`figure7.py` (danger palette, `HOT_99`/`HOT_95`), just as unfilled outlines so the danger-index color shows through each cell. |
+| `basemap_white_common.py` | Shared library — not run directly. The plain reference-layer basemap (state boundary, roads, desert, reservation, fencing) with no death/danger data on it. |
+| `figure1.py` | **Run this.** The paper's geographic reference map (Figure 1) — the one figure in the original paper this reproduction hadn't rebuilt until now. |
+| `raw_factor_common.py` | Shared library — not run directly. Renders the raw `slope_deg`/`ndvi` grids from `data/Danger Index Environmental Layers.csv` as true rasters (`imshow`, real colorbars) — descriptive, not run through the danger index's Z-scoring. Python-only so far. |
+| `figure10_raw_factors.py` | **Run this.** Two-panel raw slope + vegetation-density raster (Figure 10, no paper equivalent). |
 | `fetch_ndvi_layer.py` | One-off/re-runnable data-acquisition script that (re)populates the `ndvi` column of `data/Danger Index Environmental Layers.csv` from USGS NAIP imagery. Not part of the normal figure-rendering pipeline, and **Python-only, deliberately** — no R equivalent exists. **R-only users:** this doesn't affect you for running any figure — the `ndvi` column ships already populated in the committed CSV, and `danger_index_common.R` just reads it as a plain column like `slope_deg`. This script only matters if you want to *refresh* the NDVI data itself (e.g. against newer imagery), which currently requires Python. |
 | `summarize_danger_factors.py` | Reporting utility — not part of the figure pipeline. Regenerates the two factor-summary tables (data sources/direction, descriptive statistics) in `docs/DANGER_INDEX_METHODOLOGY.md` §2, and writes `docs/danger_index_factor_summary.csv`. Re-run this whenever the underlying environmental data changes so the doc's tables don't drift out of sync. |
 
@@ -118,7 +130,7 @@ for exact sources: Census TIGER/Line 2021 for roads/state/tribal lands, USGS
 
 **R versions**: every script above also has an `.R` equivalent in `r/`
 (`basemap_common.R`, `hotspot_common.R`, `danger_index_common.R`,
-`figure2.R`, `figure3.R` ... `figure3_hotspot.R`) that produces closely
+`figure2.R`, `figure3.R` ... `figure9_hotspot.R`) that produces closely
 matching results using R instead of Python — see §6.
 
 ## 2. One-time setup
@@ -253,13 +265,16 @@ All output files land in `figures/`, regardless of which script produced them.
 
 | Script (in `python/`) | Output file (in `figures/`) | What to check |
 |---|---|---|
+| `figure1.py` | `figure1_reproduction.png` | Geographic reference only — no data-driven output to check |
+| `figure2.py` | `figure2_reproduction.png` | Composite index range; see `docs/DANGER_INDEX_METHODOLOGY.md` |
 | `figure3.py` | `figure3_reproduction.png` | n = 3,041 |
 | `figure4.py` | `figure4_reproduction.png` | n = 1,215 |
 | `figure5.py` | `figure5_reproduction.png` | n = 1,826 |
 | `figure6.py` | `figure6_reproduction.png` | `Gi_Bin` distribution printed to console; compare pattern (not exact counts) to the authors' own ArcGIS output (see §4) |
 | `figure7.py` | `figure7_reproduction.png` | `Gi_Bin` distribution printed to console; compare pattern the same way |
-| `figure3_hotspot.py` | `figure3_hotspot_reproduction.png` | No paper equivalent to compare against; sanity-check only |
 | `figure8.py` | `figure8_reproduction.png` | Two panels; `Gi_Bin` distributions printed to console should match `figure6.py`/`figure7.py` exactly (604 / 814 grid cells) |
+| `figure9_hotspot.py` | `figure9_hotspot_allyears.png` | No paper equivalent to compare against; sanity-check only |
+| `figure10_raw_factors.py` | `figure10_raw_factors.png` | Two panels; check against `slope_deg`/`ndvi` summary stats in `docs/danger_index_factor_summary.csv` |
 
 Every script also prints a `generated YYYY-MM-DD HH:MM:SS` line to the
 console on each run — the figures themselves are now clean, production-
@@ -279,7 +294,7 @@ same Gi\* formula, same FDR correction, same colors:
 | `basemap_common.py` | `basemap_common.R` |
 | `hotspot_common.py` | `hotspot_common.R` |
 | `danger_index_common.py` | `danger_index_common.R` |
-| `figure3.py` ... `figure3_hotspot.py` | `figure3.R` ... `figure3_hotspot.R` |
+| `figure3.py` ... `figure9_hotspot.py` | `figure3.R` ... `figure9_hotspot.R` |
 | `figure8.py` | `figure8.R` |
 
 **Setup:** one package -- `sf` (handles the shapefiles and the fence
@@ -299,9 +314,9 @@ working directory doesn't matter. Output PNGs get an `_R` suffix
 **Validated for exact parity, not just "looks similar":** the point-map
 scripts (`figure3.R`/`figure4.R`/`figure5.R`) produce the identical record
 counts as their Python counterparts (3,041 / 1,215 / 1,826). The hot-spot
-scripts (`figure6.R`/`figure7.R`/`figure3_hotspot.R`) produce the *exact
+scripts (`figure6.R`/`figure7.R`/`figure9_hotspot.R`) produce the *exact
 same* grid cell counts, calibrated distance bands, and full `Gi_Bin`
-distributions as `figure6.py`/`figure7.py`/`figure3_hotspot.py` — e.g. both
+distributions as `figure6.py`/`figure7.py`/`figure9_hotspot.py` — e.g. both
 `figure6.py` and `figure6.R` independently compute 604 grid cells, a
 0.0984° distance band, and a `Gi_Bin` split of `{0: 573, 2: 1, 3: 30}`. The
 same caveats about matching (or not matching) the original paper's ArcGIS

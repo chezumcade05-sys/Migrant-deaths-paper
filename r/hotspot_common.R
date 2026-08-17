@@ -11,7 +11,7 @@
 # reproduction is known to diverge from the paper's original ArcGIS
 # "Optimized Hot Spot Analysis" output.
 #
-# Not run directly -- figure6.R / figure7.R / figure3_hotspot.R source()
+# Not run directly -- figure6.R / figure7.R / figure9_hotspot.R source()
 # this file (which itself sources basemap_common.R).
 
 # Colors sampled directly from the original Figures 6/7 legend swatches.

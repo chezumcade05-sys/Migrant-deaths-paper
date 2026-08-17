@@ -62,6 +62,6 @@ if len(subset) != 1215:
 bc.render_figure(
     deaths_subset=subset,
     death_label="Location of Remains 2000-2007",
-    title="Figure 4: Migrant Deaths, 2000-2007",
+    title="Figure 4: Migrant Deaths, Pre-SFA (2000-2007)",
     out_filename="figure4_reproduction.png",
 )
