@@ -283,7 +283,26 @@ the pipeline has stabilized past the heavy-iteration stage where that
 watermark was useful for telling a fresh render apart from a stale cached
 one in an editor tab.
 
-## 6. R versions
+## 6. R&R analysis tables
+
+These scripts produce the publication-ready Word tables added for the revise-and-resubmit. They are reporting/analysis utilities — not part of the figure-rendering pipeline — and read from `Hot Spots/` working files that live outside this repo.
+
+| Script (`python/`) | Output (`docs/`) | What it contains |
+|---|---|---|
+| `regressions.py` | `paper_tables_regressions_2026-08-16.docx` | **Table 1**: mean deaths per cell by danger index tercile, pre vs. post-SFA, with two-sample t-tests and DiD (High − Low). **Table 2**: Poisson DiD regression, 3 specs (baseline / +fence/gap / +sector offset), Conley (1999) spatial HAC SEs at 50 km cutoff |
+| `summarize_danger_factors.py` | `danger_index_factor_tables.docx` | Danger index factor data sources and descriptive statistics |
+| `summarize_hotspot_raster.py` | `hotspot_raster_tables.docx` | Gi* hot-spot summary by period and raster grid specification |
+| `summarize_death_demographics.py` | `table4_summary_statistics.docx` | Paper's Table 4 — gender, age group, and cause of death by Total / pre-SFA / post-SFA, recomputed from source data |
+
+**Figure 8 color variants** (all produce a PNG in `figures/` without overwriting the main `figure8_reproduction.png`):
+
+| Script | Output | Hot-spot outline color |
+|---|---|---|
+| `figure8.py` | `figure8_reproduction.png` | Purple (default) |
+| `figure8_black_outline.py` | `figure8_black_outline.png` | Black / dark gray |
+| `figure8_white_outline.py` | `figure8_white_outline.png` | White / light gray |
+
+## 7. R versions
 
 Every script above has an R port in `r/`, kept functionally identical on
 purpose — same classification rule, same grid/distance-band calibration,
