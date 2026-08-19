@@ -107,13 +107,40 @@ def _min_dist_to_water(lons, lats):
     return d
 
 
+def _compute_az_mask(lons, lats):
+    """True for grid cells whose center falls within Arizona's state
+    boundary. Factored out so compute_danger_index() and every render
+    function share one computation instead of each re-reading the
+    shapefile and re-running the point-in-polygon test."""
+    import shapefile
+    from shapely.geometry import Point, shape as shapely_shape
+    from shapely.prepared import prep
+    sf = shapefile.Reader(str(bc.SHAPE_DIR / "tl_2021_us_state" / "tl_2021_us_state.shp"))
+    field_names = [f[0] for f in sf.fields[1:]]
+    az_shape = None
+    for sr in sf.iterShapeRecords():
+        if dict(zip(field_names, sr.record))["STATEFP"] == "04":
+            az_shape = shapely_shape(sr.shape.__geo_interface__)
+            break
+    az_prepared = prep(az_shape)
+    return np.array([az_prepared.contains(Point(lo, la)) for lo, la in zip(lons, lats)])
+
+
 def compute_danger_index():
     """Returns a dict of per-cell arrays (row, col, lon, lat, the 6 raw
     factor values, their Z-scores, and the summed composite index), plus
-    the grid shape, ready to render or inspect."""
+    the grid shape, ready to render or inspect.
+
+    Each factor is standardized using the mean/std of *only the in-Arizona
+    cells* -- not the full rectangular grid, which extends into slivers of
+    Mexico, California, and New Mexico that aren't part of the study area.
+    Z-scores are still returned for every cell (on that Arizona-derived
+    scale), but nothing outside Arizona contributes to the scale itself.
+    See DANGER_INDEX_METHODOLOGY.md."""
     env = pd.read_csv(ENV_CSV)
     lons = env["longitude"].values
     lats = env["latitude"].values
+    in_az = _compute_az_mask(lons, lats)
 
     dist_city = _min_dist_to_points(lons, lats, MAJOR_CITIES)
     dist_road = _min_dist_to_roads(lons, lats)
@@ -123,7 +150,9 @@ def compute_danger_index():
     ndvi = env["ndvi"].values
 
     def zscore(x):
-        return (x - np.nanmean(x)) / np.nanstd(x)
+        az_mean = np.nanmean(x[in_az])
+        az_std = np.nanstd(x[in_az])
+        return (x - az_mean) / az_std
 
     z_temp = zscore(tmax)
     z_city = zscore(dist_city)
@@ -141,7 +170,7 @@ def compute_danger_index():
 
     return {
         "row": env["row"].values, "col": env["col"].values,
-        "lon": lons, "lat": lats,
+        "lon": lons, "lat": lats, "in_az": in_az,
         "dist_city_deg": dist_city, "dist_road_deg": dist_road, "dist_water_deg": dist_water,
         "slope_deg": slope, "july_tmax_c": tmax, "ndvi": ndvi,
         "z_temp": z_temp, "z_city": z_city, "z_road": z_road, "z_water": z_water,
@@ -194,19 +223,9 @@ def render_danger_index(out_filename="figure2_reproduction.png",
 
     # Mask to cells within Arizona -- a full rectangular bbox would color
     # parts of Mexico/California/New Mexico that aren't meaningful here.
-    import shapefile
-    from shapely.geometry import Point
-    from shapely.prepared import prep
-    sf = shapefile.Reader(str(bc.SHAPE_DIR / "tl_2021_us_state" / "tl_2021_us_state.shp"))
-    field_names = [f[0] for f in sf.fields[1:]]
-    az_shape = None
-    for sr in sf.iterShapeRecords():
-        if dict(zip(field_names, sr.record))["STATEFP"] == "04":
-            from shapely.geometry import shape as shapely_shape
-            az_shape = shapely_shape(sr.shape.__geo_interface__)
-            break
-    az_prepared = prep(az_shape)
-    in_az = np.array([az_prepared.contains(Point(lo, la)) for lo, la in zip(result["lon"], result["lat"])])
+    # (Also the same mask used inside compute_danger_index() to standardize
+    # the Z-scores -- computed once there, just reused here for rendering.)
+    in_az = result["in_az"]
 
     fence_before, fence_after, have_fence = bc.load_fence_layers()
 
@@ -375,19 +394,7 @@ def render_overlay_figure(out_filename="figure8_reproduction.png",
     overlay possible at all.
     """
     result = compute_danger_index()
-
-    import shapefile
-    from shapely.geometry import Point, shape as shapely_shape
-    from shapely.prepared import prep
-    sf = shapefile.Reader(str(bc.SHAPE_DIR / "tl_2021_us_state" / "tl_2021_us_state.shp"))
-    field_names = [f[0] for f in sf.fields[1:]]
-    az_shape = None
-    for sr in sf.iterShapeRecords():
-        if dict(zip(field_names, sr.record))["STATEFP"] == "04":
-            az_shape = shapely_shape(sr.shape.__geo_interface__)
-            break
-    az_prepared = prep(az_shape)
-    in_az = np.array([az_prepared.contains(Point(lo, la)) for lo, la in zip(result["lon"], result["lat"])])
+    in_az = result["in_az"]
     vabs = np.nanmax(np.abs(result["composite"][in_az]))
 
     deaths = bc.load_deaths()
