@@ -350,20 +350,19 @@ def _draw_danger_raster(ax, result, in_az, vabs):
                                 facecolor=color, edgecolor="none", zorder=2))
 
 
+OVERLAY_99 = "#000000"   # black — 99% confidence hot spots on danger index overlay
+OVERLAY_95 = "#555555"   # dark gray — 95% confidence hot spots on danger index overlay
+
 def _draw_hotspot_outlines(ax, gi_result):
     """Significant (95%/99%) hot-spot cells drawn as UNFILLED outlined
-    squares -- reusing hotspot_common.HOT_99/HOT_95 exactly as their edge
-    color, no new colors -- so the danger-index color underneath stays
-    visible through the middle of each cell. Cells below 95% confidence
-    are left undrawn here (unlike figure6.py/figure7.py, which tint every
-    populated cell); this figure is about where hot spots and danger
-    overlap, not the full underlying death distribution."""
+    squares in purple, so they contrast clearly against the yellow-orange-red
+    danger index background. Cells below 95% confidence are left undrawn."""
     half = hc.CELL_SIZE / 2
     for lon, lat, gb in zip(gi_result["lon"], gi_result["lat"], gi_result["gi_bin"]):
         if gb == 3:
-            edgecolor, lw = hc.HOT_99, 2.2
+            edgecolor, lw = OVERLAY_99, 2.2
         elif gb == 2:
-            edgecolor, lw = hc.HOT_95, 1.6
+            edgecolor, lw = OVERLAY_95, 1.6
         else:
             continue
         ax.add_patch(Rectangle((lon - half, lat - half), hc.CELL_SIZE, hc.CELL_SIZE,
@@ -493,9 +492,9 @@ def render_overlay_figure(out_filename="figure8_reproduction.png",
                 label = "Most dangerous" if i == n_swatches - 1 else ("Relatively least dangerous" if i == 0 else " ")
                 legend_handles.append(Rectangle((0, 0), 1, 1, facecolor=color, edgecolor="none",
                                                   label=f"{edges[i]:+.1f} to {edges[i+1]:+.1f}  {label}".strip()))
-            legend_handles.append(Rectangle((0, 0), 1, 1, facecolor="none", edgecolor=hc.HOT_99, linewidth=2.2,
+            legend_handles.append(Rectangle((0, 0), 1, 1, facecolor="none", edgecolor=OVERLAY_99, linewidth=2.2,
                                               label="Hot Spot - 99% Confidence"))
-            legend_handles.append(Rectangle((0, 0), 1, 1, facecolor="none", edgecolor=hc.HOT_95, linewidth=1.6,
+            legend_handles.append(Rectangle((0, 0), 1, 1, facecolor="none", edgecolor=OVERLAY_95, linewidth=1.6,
                                               label="Hot Spot - 95% Confidence"))
             legend_handles.append(Line2D([], [], marker="^", linestyle="", markerfacecolor=bc.WATER_STATION_COLOR,
                                            markeredgecolor="black", markeredgewidth=0.4, markersize=8,
@@ -505,9 +504,11 @@ def render_overlay_figure(out_filename="figure8_reproduction.png",
                 legend_handles.append(Line2D([], [], color=bc.FENCE_BLUE, linewidth=2.0, label="Border built 2007 or before"))
             legend_handles.append(Line2D([], [], color=bc.DESERT_BROWN, linestyle=(0, (6, 2)), linewidth=1.6, label="Arizona Sonoran Desert"))
             legend_handles.append(Line2D([], [], color=bc.RESERVATION_PURPLE, linestyle=(0, (6, 2)), linewidth=1.3, label="Tohono O'odham Nation Reservation"))
-            legend = ax.legend(handles=legend_handles, loc="upper right", fontsize=7,
-                                title="Danger Index (sum of 6 Z-scores) + Hot Spots", title_fontsize=8.5, frameon=True,
-                                edgecolor="black", facecolor="white")
+            legend = ax.legend(handles=legend_handles, loc="upper right", fontsize=6,
+                                title="Legend", title_fontsize=7, frameon=True,
+                                edgecolor="black", facecolor="white",
+                                handlelength=1.2, handleheight=0.8,
+                                borderpad=0.4, labelspacing=0.3)
             legend.get_title().set_fontweight("bold")
             legend._legend_box.align = "left"
 
