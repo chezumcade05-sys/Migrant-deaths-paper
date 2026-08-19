@@ -37,6 +37,12 @@ from matplotlib.lines import Line2D
 import shapefile  # pyshp
 import utm  # pure-Python UTM <-> lat/lon conversion (no PROJ/GDAL needed)
 
+# Every figure script imports this module first, so setting the font here
+# once applies process-wide (matplotlib rcParams are global state) to
+# every figure -- title/axis/legend/annotation text alike -- without
+# needing to touch each individual text call.
+plt.rcParams["font.family"] = "Times New Roman"
+
 # Colors sampled directly from the original figures' legend swatches (the
 # embedded JPEGs inside the .docx), so the reproduction's palette matches.
 DEATH_GREEN = "#27e32c"
@@ -348,7 +354,8 @@ def render_figure(deaths_subset, death_label, title, out_filename):
     for spine in ax.spines.values():
         spine.set_color("black")
         spine.set_linewidth(1.0)
-    ax.set_title(title)
+    if title:
+        ax.set_title(title)
     ax.set_aspect(geo_aspect)
 
     fence_status = "fence: ON" if have_fence else "fence: OFF (geopandas unavailable)"

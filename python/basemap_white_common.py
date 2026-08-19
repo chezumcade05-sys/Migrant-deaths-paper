@@ -1,4 +1,8 @@
 """
+VESTIGIAL for the current paper's figure set: only figure1.py (itself
+vestigial -- see its docstring) imports this. Kept for reference in case
+the original paper's actual Figure 1 is needed again.
+
 Figure 1: Geographic Features of the Arizona-Mexico Border -- the original
 paper's Figure 1, which this reproduction never rebuilt (the series here
 started at Figure 2). Same reference layers as every other figure

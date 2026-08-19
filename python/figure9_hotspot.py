@@ -1,4 +1,8 @@
 """
+VESTIGIAL for the current paper's figure set: not one of the current 8
+figures. Kept for reference -- still a valid supplementary analysis if
+ever needed again.
+
 Hot-spot analysis of the complete 2000-2019 migrant death dataset (the same
 points used in figure3.py). There is no directly corresponding numbered
 figure in Bansak, Blanco, Coon & Dieringer (2025) -- the paper only runs

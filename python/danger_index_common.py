@@ -301,7 +301,8 @@ def render_danger_index(out_filename="figure2_reproduction.png",
     for spine in ax.spines.values():
         spine.set_color("black")
         spine.set_linewidth(1.0)
-    ax.set_title(title)
+    if title:
+        ax.set_title(title)
     ax.set_aspect(geo_aspect)
 
     _draw_factor_summary(fig, result, in_az, lat_mid, summary_h, fig_h)
@@ -471,7 +472,8 @@ def render_overlay_figure(out_filename="figure8_reproduction.png",
         for spine in ax.spines.values():
             spine.set_color("black")
             spine.set_linewidth(1.0)
-        ax.set_title(title, fontsize=11)
+        if title:
+            ax.set_title(title, fontsize=11)
         ax.set_aspect(geo_aspect)
 
         if show_legend:

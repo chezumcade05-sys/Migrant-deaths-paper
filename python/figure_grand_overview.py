@@ -1,4 +1,10 @@
 """
+VESTIGIAL for the current paper's figure set: superseded by
+paper_figure1_basemap_overview.py (same underlying grand_overview_common,
+just a different output filename and no in-image "Figure 1:" header --
+the caption is now typed directly into the Word manuscript instead).
+Note that grand_overview_common.py itself is NOT vestigial.
+
 2x2 grand overview: white reference basemap, vegetation density,
 temperature, and slope, side by side. Not a reproduction of anything in
 the original paper -- a single-glance summary combining Figure 1's

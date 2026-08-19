@@ -1,4 +1,10 @@
 """
+VESTIGIAL for the current paper's figure set: not one of the current 8
+figures -- its slope/temperature/NDVI content now lives inside Figure 1's
+2x2 panel instead (paper_figure1_basemap_overview.py). Note that
+raw_factor_common.py itself is NOT vestigial -- grand_overview_common.py
+still imports its _az_mask()/_pivot_grid() helpers.
+
 Raw slope + vegetation-density (NDVI) rasters, as pulled into the
 environmental-layers CSV -- descriptive, not analytical (no Z-scoring,
 no summing into the danger index). Not a reproduction of anything in the

@@ -1,4 +1,11 @@
 """
+VESTIGIAL for the current paper's figure set: superseded by
+paper_figure8_overlay.py (same underlying
+danger_index_common.render_overlay_figure(), but with black/dark-gray
+hot-spot outlines instead of red/orange, and no in-image header). Still
+valid as a reproduction of the *original* Bansak et al. (2025) paper's
+own Figure 8, if that's ever needed again.
+
 Reproduce Figure 8 from Bansak, Blanco, Coon & Dieringer (2025),
 "Border Walls and Death on the US-Mexico Border": the danger index
 overlaid with the hot-spot analysis results -- extended here to show both

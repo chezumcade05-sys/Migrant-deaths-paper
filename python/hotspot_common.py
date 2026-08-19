@@ -256,7 +256,8 @@ def render_hotspot_figure(deaths_subset, death_label, title, out_filename):
     for spine in ax.spines.values():
         spine.set_color("black")
         spine.set_linewidth(1.0)
-    ax.set_title(title)
+    if title:
+        ax.set_title(title)
     ax.set_aspect(geo_aspect)
 
     fig.tight_layout()

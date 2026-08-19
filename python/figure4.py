@@ -1,4 +1,10 @@
 """
+VESTIGIAL for the current paper's figure set: this is now Figure 3, not
+Figure 4 -- see paper_figure3_deaths_presfa.py (same underlying
+basemap_common.render_figure(), just a different output number/no
+in-image header). Still valid as a reproduction of the *original*
+Bansak et al. (2025) paper's own Figure 4, if that's ever needed again.
+
 Reproduce Figure 4 from Bansak, Blanco, Coon & Dieringer (2025),
 "Border Walls and Death on the US-Mexico Border":
     Figure 4. Migrant Deaths, 2000-2007 (pre-Secure Fence Act)

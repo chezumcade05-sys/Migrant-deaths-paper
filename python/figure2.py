@@ -1,4 +1,11 @@
 """
+VESTIGIAL for the current paper's figure set: this is now Figure 7, not
+Figure 2 -- see paper_figure7_danger_index.py (same underlying
+danger_index_common.render_danger_index(), just a different output
+number/no in-image header). Still valid as a reproduction of the
+*original* Bansak et al. (2025) paper's own Figure 2, if that's ever
+needed again.
+
 Reproduce Figure 2 from Bansak, Blanco, Coon & Dieringer (2025),
 "Border Walls and Death on the US-Mexico Border": the danger index map --
 but with a rebuilt index using different factors and a different scoring

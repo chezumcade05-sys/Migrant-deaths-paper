@@ -1,4 +1,10 @@
 """
+VESTIGIAL for the current paper's figure set: this output (the original
+paper's geographic-features map) is not one of the current 8 figures --
+see paper_figure1_basemap_overview.py, which replaced it with a 2x2
+basemap+factor panel. Still valid as a reproduction of the *original*
+Bansak et al. (2025) paper's own Figure 1, if that's ever needed again.
+
 Reproduce Figure 1 from Bansak, Blanco, Coon & Dieringer (2025),
 "Border Walls and Death on the US-Mexico Border": the geographic-features
 reference map (state boundary, roads, cities, Sonoran Desert outline,

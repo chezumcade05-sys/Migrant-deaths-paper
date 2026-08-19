@@ -78,7 +78,7 @@ def render_grand_overview(out_filename="figure1_grand_overview.png"):
     col_gap = 0.15
     panel_w = (fig_w - col_gap) / 2
     panel_h = panel_w * (lat_span * geo_aspect) / lon_span
-    title_h = 0.32
+    title_h = 0.05
     fig_h = panel_h * 2 + title_h
     fig = plt.figure(figsize=(fig_w, fig_h), dpi=300)
     gs = fig.add_gridspec(2, 4, hspace=0.1, wspace=0.06,
@@ -159,9 +159,9 @@ def render_grand_overview(out_filename="figure1_grand_overview.png"):
     data_panel(ax_temp, cax_temp, temp_grid, "YlOrRd", "Temperature (July Max, °C)", "°C", cbar_side="left")
     data_panel(ax_slope, cax_slope, slope_grid, "YlOrBr", "Slope", "Degrees")
 
-    fig.suptitle("Figure 1: Basemap, Vegetation Density, Temperature, and Slope",
-                 fontsize=15, fontweight="bold", fontfamily=FONT, y=0.998)
-
+    # No overall "Figure N" header -- captions are typed out in the Word
+    # doc instead. The four panel labels (Basemap/NDVI/Temperature/Slope)
+    # stay, since without them there's no way to tell the panels apart.
     out_path = bc.FIGURES_DIR / out_filename
     fig.savefig(out_path, dpi=300)
     print(f"Saved plot to {out_path}")

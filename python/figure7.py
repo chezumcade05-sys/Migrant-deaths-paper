@@ -1,4 +1,11 @@
 """
+VESTIGIAL for the current paper's figure set: this is now Figure 6, not
+Figure 7 -- see paper_figure6_hotspot_postsfa.py (same underlying
+hotspot_common.render_hotspot_figure(), just a different output
+number/no in-image header). Still valid as a reproduction of the
+*original* Bansak et al. (2025) paper's own Figure 7, if that's ever
+needed again.
+
 Reproduce Figure 7 from Bansak, Blanco, Coon & Dieringer (2025),
 "Border Walls and Death on the US-Mexico Border":
     Figure 7. Hot-Spot Analysis, 2008-2019 (post-Secure Fence Act)
